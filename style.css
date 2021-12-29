@@ -9,4 +9,22 @@ body    {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
     font-weight: normal;
+    width: 90%;
+    max-width: 900px;
+    margin: 2em auto;
 }
+
+.container  {
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgb(207, 232, 220);
+    border: 2px solid   rgb(79, 185, 227);
+}
+
+.box_2  {
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgb(207, 232, 220);
+    border: 2px solid   rgb(79, 185, 227);
+}
+
