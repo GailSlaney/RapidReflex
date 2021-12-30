@@ -14,14 +14,23 @@ body    {
     margin: 2em auto;
 }
 
-.container  {
+/*.container  {
+    
     border-radius: 5px;
     padding: 10px;
     background-color: rgb(207, 232, 220);
     border: 2px solid   rgb(79, 185, 227);
+    
 }
+*/
 
 .box_2  {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "pic1 pic2"
+        "pic3 pic4";
     border-radius: 5px;
     padding: 10px;
     background-color: rgb(207, 232, 220);
