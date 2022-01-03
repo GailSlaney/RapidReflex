@@ -50,28 +50,55 @@ a {
     gap: 50px;
 }
 
-    .box_2  {
-        width: 50%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-auto-flow: row;
-        gap: 25px;
-        
-        grid-template-areas: 
-            "pic1 pic2"
-            "pic3 pic4";
-        justify-items: center;
-        align-items: center;
-        border-radius: 10%;
-        padding: 10px;
-        background-color: pink;
-        border: 2px solid   rgb(79, 185, 227);
-    }
+.box_2  {
+    /*width: 50%;*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-flow: row;
+    gap: 25px;
+    
+    grid-template-areas: 
+        "pic1 pic2"
+        "pic3 pic4";
+    justify-items: center;
+    align-items: center;
+    border-radius: 10%;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid  #333;
+}
 
     #timer {
+        display:grid;    
+        /*grid-template-columns: 1fr;*/
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+        /*row-gap: 2px;*/
+        background-color: darkslategray;
+        color: floralwhite;
+        
 
+        height: 150px;
+        width: 300px;
+
+        border: 5px solid;
+        border-radius: 30%;
     }
+
+    .time {
+        font-family: "Roboto Mono", monospace;
+        font-size: 35px;
+        color: floralwhite;
+    }
+
+    .units {
+        font-family: "Roboto Mono", monospace;
+        font-size: 35px;
+        color: floralwhite;
+    }
+    
 
 #colAndShapeName {
     width: 50%;
