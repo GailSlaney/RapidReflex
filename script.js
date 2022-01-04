@@ -75,7 +75,6 @@ const shapes = [
 
 //Page initially opens
 let randomInt,
-    shapeImage,
     shapeColor,
     shapeName,
     level = 1;
@@ -83,16 +82,20 @@ let gridCells = document.querySelectorAll('.child');
 console.log(gridCells);
 
 let gridSize = gridCells.length;
-let totRows = Math.sqrt(gridSize);
-let totCols = totRows;
+//let totRows = Math.sqrt(gridSize);
+//let totCols = totRows;
 console.log(gridSize);
+
+let layout = getGridLayout(gridSize);
+console.log(layout);
+
 for (let i = 0; i < gridSize; i++) {
     getRandomInt();
     console.log(randomInt);
     //initial button click called when form opens
-    buttonClick(randomInt);
+    let shapeImage = getImage(randomInt);
     console.log(shapeImage);
-    placeImage(shapeImage)
+    placeImage(shapeImage, i);
     
 }
 
@@ -123,7 +126,7 @@ function getRandomInt(maxNumber = shapes.length) {
 }
 
 
-function buttonClick(randomInt) {
+function getImage(randomInt) {
     shapeImage = shapes.filter(function(shape){
         return shape.id === randomInt;
     }) .map(function(shape){
@@ -132,4 +135,14 @@ function buttonClick(randomInt) {
     
     //img.src = shapeImage;
     //should img.src actually be child.
+}
+
+function getGridLayout(gridSize) {
+    let totRows = Math.sqrt(gridSize);
+    for
+}
+
+function placeImage(shapeImage, i) {
+    let row = Math.floor(i/totRows);
+    let col = i % totRows;
 }
