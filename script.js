@@ -77,7 +77,14 @@ const shapes = [
 let randomInt,
     shapeImage,
     shapeColor,
-    shapeName;
+    shapeName,
+    level = 1;
+let gridCells = document.querySelectorAll('.child');
+console.log(gridCells);
+
+let gridSize = gridCells.length;
+console.log(gridSize);
+
 getRandomInt();
 console.log(randomInt);
 //initial button click called when form opens
@@ -108,4 +115,14 @@ img.addEventListener('click', (e) => {
 function getRandomInt(maxNumber = shapes.length) {
     randomInt = Math.floor(Math.random() * maxNumber);
     return randomInt;
+}
+
+function buttonClick(randomInt) {
+    shapeImage = shapes.filter(function(shape){
+        return shape.id === randomInt;
+    }) .map(function(shape){
+        return shape.image;
+    });
+    img.src = shapeImage;
+    //should img.src actually be child.
 }
