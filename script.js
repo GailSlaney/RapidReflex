@@ -83,13 +83,18 @@ let gridCells = document.querySelectorAll('.child');
 console.log(gridCells);
 
 let gridSize = gridCells.length;
+let totRows = Math.sqrt(gridSize);
+let totCols = totRows;
 console.log(gridSize);
-
-getRandomInt();
-console.log(randomInt);
-//initial button click called when form opens
-buttonClick(randomInt);
-console.log(shapeImage);
+for (let i = 0; i < gridSize; i++) {
+    getRandomInt();
+    console.log(randomInt);
+    //initial button click called when form opens
+    buttonClick(randomInt);
+    console.log(shapeImage);
+    placeImage(shapeImage)
+    
+}
 
 //Let's Play button is clicked
 const button = document.querySelector('.button');
@@ -117,12 +122,14 @@ function getRandomInt(maxNumber = shapes.length) {
     return randomInt;
 }
 
+
 function buttonClick(randomInt) {
     shapeImage = shapes.filter(function(shape){
         return shape.id === randomInt;
     }) .map(function(shape){
         return shape.image;
     });
-    img.src = shapeImage;
+    
+    //img.src = shapeImage;
     //should img.src actually be child.
 }
