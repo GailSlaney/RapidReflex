@@ -50,25 +50,33 @@ a {
     gap: 50px;
 }
 
-.box_2  {
+.level1Grid  {
     /*width: 50%;*/
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     grid-auto-flow: row;
     gap: 25px;
+    grid-gap: 5px;
+    /*background-color: black;*/
     
     grid-template-areas: 
-        "pic1 pic2"
-        "pic3 pic4";
-    justify-items: center;
+        "child child"
+        "child child";
+    /*justify-items: center;
     align-items: center;
-    border-radius: 10%;
+    border-radius: 10%;*/
     padding: 10px;
-    background-color: white;
+   background-color: black;
     border: 2px solid  #333;
 }
 
+.child {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
     #timer {
         display:grid;    
         /*grid-template-columns: 1fr;*/
@@ -101,7 +109,7 @@ a {
     
 
 #colAndShapeName {
-    width: 50%;
+    width: 90%;
     border-radius: 5px;
     padding: 10px;
     background-color: ivory;
@@ -113,12 +121,13 @@ a {
 }
 
 .button {
+    width: auto;
     background-color: #333;
     color: #fff;
     padding: 10px 15px;
     border: none;
     border-radius: 10% / 50%;
     /*font-family: Verdana, Geneva, Tahoma, sans-serif;*/
-    font: Tahoma 20px  bold;
+    font: Tahoma 30px  bold;
 }
 
