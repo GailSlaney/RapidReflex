@@ -49,6 +49,22 @@ a {
     grid-template-columns: 2fr 1fr;
     gap: 50px;
 }
+
+#level_Grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-flow: row;
+    gap: 25px;
+    grid-gap: 5px;
+    background-color: white;
+    align-items: center;
+    justify-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 2px solid black;
+    
+}
 /*
 .level1Grid  {
     
@@ -72,8 +88,8 @@ a {
 }
 */
 
-/*
-.child {
+
+/*.child {
     background-color: white;
     display: flex;
     align-items: center;
@@ -81,14 +97,15 @@ a {
 }
 */
 
-.gridRow {
+/*.gridRow {
     border: 2px solid black;
 }
 
 .cell {
-    border: 2px solid black;
+    border: 20px solid white;
+    
 }
-
+*/
 #timer {
     display:grid;    
     /*grid-template-columns: 1fr;*/

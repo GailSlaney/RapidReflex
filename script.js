@@ -80,8 +80,8 @@ let randomInt,
     level = 1;
 
 const level_Grid = document.getElementById("level_Grid");
-let rows = document.getElementsByClassName("gridRow");
-let cells = document.getElementsByName("cell");
+/*let rows = document.getElementsByClassName("gridRow");
+let cells = document.getElementsByName("cell");*/
 
 //let gridCells = document.querySelectorAll('.child');
 //console.log(gridCells);
@@ -91,7 +91,8 @@ let gridSize = 4;
 //let totCols = totRows;
 console.log(gridSize);
 
-let layout = getGridLayout(gridSize);
+//HOW DO I ACTUALLY DISPLAY THE GRID?
+getGridLayout(gridSize);
 console.log(layout);
 
 for (let i = 0; i < gridSize; i++) {
@@ -142,21 +143,31 @@ function getImage(randomInt) {
     //should img.src actually be child.
 }
 
+
 //creates the grid
 function getGridLayout(gridSize) {
     let totRows = Math.sqrt(gridSize);
-   makeRows(totRows);
+    //let gridShape = level_Grid.
+    
+/* makeRows(totRows);
    makeColumns(totRows);
+   */
 }
 
+/*
 //creates rows
 function makeRows(totRows) {
     for (i = 0; i < totRows; i++) {
-        let row = document.createElement("div");
-        level_Grid.appendChild(row).className = "gridRow";
+        //let row = document.createElement("a");
+        let cell = level_Grid.createElement("a");
+
+
+        level_Grid.appendChild(rows).className = "gridRow";
     };
 };
+*/
 
+/*
 //creates columns
 function makeColumns(totRows) {
     for (i = 0; i < rows.length; i++) {
@@ -166,9 +177,12 @@ function makeColumns(totRows) {
         };
     };
 };
+*/
 
+/*
 //fills cells with images
 function placeImage(shapeImage, i) {
     let row = Math.floor(i/totRows);
     let col = i % totRows;
 }
+*/
