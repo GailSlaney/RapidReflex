@@ -78,10 +78,15 @@ let randomInt,
     shapeColor,
     shapeName,
     level = 1;
-let gridCells = document.querySelectorAll('.child');
-console.log(gridCells);
 
-let gridSize = gridCells.length;
+const level_Grid = document.getElementById("level_Grid");
+let rows = document.getElementsByClassName("gridRow");
+let cells = document.getElementsByName("cell");
+
+//let gridCells = document.querySelectorAll('.child');
+//console.log(gridCells);
+
+let gridSize = 4;
 //let totRows = Math.sqrt(gridSize);
 //let totCols = totRows;
 console.log(gridSize);
@@ -137,11 +142,32 @@ function getImage(randomInt) {
     //should img.src actually be child.
 }
 
+//creates the grid
 function getGridLayout(gridSize) {
     let totRows = Math.sqrt(gridSize);
-    for
+   makeRows(totRows);
+   makeColumns(totRows);
 }
 
+//creates rows
+function makeRows(totRows) {
+    for (i = 0; i < totRows; i++) {
+        let row = document.createElement("div");
+        level_Grid.appendChild(row).className = "gridRow";
+    };
+};
+
+//creates columns
+function makeColumns(totRows) {
+    for (i = 0; i < rows.length; i++) {
+        for (j = 0; j < totRows; j++) {
+            let newCell = document.createElement("div");
+            rows[j].appendChild(newCell).className = "cell";
+        };
+    };
+};
+
+//fills cells with images
 function placeImage(shapeImage, i) {
     let row = Math.floor(i/totRows);
     let col = i % totRows;
