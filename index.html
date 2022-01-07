@@ -19,15 +19,8 @@
         <br>
         <div class="shapes_timer">
             <div id="imagesBox">
-                <a href> <img src="images/yellowTriangle.png" height="200" width="200"> </a>
-                <a href> <img src="" height="200" width="200"> </a>
-                <a href> <img src="images/yellowTriangle.png" height="200" width="200"> </a>
-                <a href> <img src="images/redTriangle.png" height="200" width="200"> </a>
-                <a href> <img src="images/yellowTriangle.png" height="200" width="200"> </a>
-                <a href> <img src="" height="200" width="200"> </a>
-                <a href> <img src="images/yellowTriangle.png" height="200" width="200"> </a>
-                <a href> <img src="images/redTriangle.png" height="200" width="200"> </a>
-                <a href> <img src="images/redTriangle.png" height="200" width="200"> </a>
+                <div <a href> <img src="images/yellowTriangle.png"> </a> </div>
+                <div <a href> <img src="images/redTriangle.png"> </a> </div>
             </div>
 
             <div id="timer">
@@ -35,6 +28,15 @@
                 <div class="time" id="display">00:00:00:000</div>
                 <div class="units" id="unitDisplay">hh:mm:ss:ms </div>
                 <div></div>
+            </div>
+            <div class="controls">
+                <button class="buttonPlay">
+                    <img id="PlayButton" src="./images/start.jpg" style="display: block;">
+                    <img id="pauseButton" src="./images/stop.jpg" style="display: none;">
+                </button>
+                <button class="buttonReset">
+                    <img id="resetButton" src="./images/reset2.jpg">
+                </button>
             </div>
 
         </div>
@@ -45,7 +47,7 @@
         </div>
         <br>
         <br>
-        <a class="button" href>Let's Play</a>
+        <button>Let's Play</button>
     </div>
     <script src="./script.js"></script>
 </body>
