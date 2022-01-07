@@ -19,26 +19,29 @@
         <br>
         <div class="shapes_timer">
             <div id="imagesBox">
-                <div <a href> <img src="images/yellowTriangle.png"> </a> </div>
-                <div <a href> <img src="images/redTriangle.png"> </a> </div>
+                <a class="sImage" href> <img src="images/yellowTriangle.png"> </a>
+                <a class="sImage" href> <img src="images/redTriangle.png"> </a>
+                <a class="sImage" href> <img src="images/yellowTriangle.png"> </a>
             </div>
 
-            <div id="timer">
+            <div class="timerGrid">             
+                <div id="timer">
+                    <div></div>
+                    <div class="time" id="display">00:00:00:000</div>
+                    <div class="units" id="unitDisplay">hh:mm:ss:ms </div>
+                    <div></div>
+                </div>
+                
+                <div class="controls">
+                    <button class="buttonPlay">
+                        <img id="PlayButton" src="./images/start.jpg" style="display: block;">
+                        <img id="pauseButton" src="./images/stop.jpg" style="display: none;">
+                    </button>
+                    <button class="buttonReset">
+                        <img id="resetButton" src="./images/reset2.jpg">
+                    </button>
+                </div>
                 <div></div>
-                <div class="time" id="display">00:00:00:000</div>
-                <div class="units" id="unitDisplay">hh:mm:ss:ms </div>
-                <div></div>
-            </div>
-            <div class="controls">
-                <button class="buttonPlay">
-                    <img id="PlayButton" src="./images/start.jpg" style="display: block;">
-                    <img id="pauseButton" src="./images/stop.jpg" style="display: none;">
-                </button>
-                <button class="buttonReset">
-                    <img id="resetButton" src="./images/reset2.jpg">
-                </button>
-            </div>
-
         </div>
         <br>
         <br>
@@ -47,7 +50,7 @@
         </div>
         <br>
         <br>
-        <button>Let's Play</button>
+        <a id="startButton" href>Let's Play</startButton>
     </div>
     <script src="./script.js"></script>
 </body>

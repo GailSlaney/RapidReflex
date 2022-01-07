@@ -45,9 +45,9 @@ a {
     */
 }
 .shapes_timer {
-    display: flex;
+    display: grid;
     justify-items: center;
-    /*grid-template-columns: 4fr 1fr;*/
+    grid-template-columns: 4fr 1fr;
     gap: 50px;
 }
 
@@ -77,58 +77,17 @@ a {
     */
 }
 
-#imagesBox > div {
+.sImage  {
     flex: auto;
 }
 
 
-/*
-.level1Grid  {
-    
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-auto-flow: row;
-    gap: 25px;
-    grid-gap: 5px;
-    background-color: black;
-    
-    grid-template-areas: 
-        "child child"
-        "child child";
-    justify-items: center;
-    align-items: center;
-    border-radius: 10%;
-    padding: 10px;
-   background-color: black;
-    border: 2px solid  #333;
-}
-*/
-
-
-/*.child {
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-*/
-
-/*.gridRow {
-    border: 2px solid black;
-}
-
-.cell {
-    border: 20px solid white;
-    
-}
-*/
 .timerGrid {
     display: grid;
+    grid-template-rows:3fr, 1fr, 3fr ;
     justify-items: center;
     grid-row-gap: 10px;
     width: 100%;
-    padding-top: 25px;
 }
 
 #timer {
@@ -179,7 +138,7 @@ bu
     align-content: center;
 }
 
-button {
+#startButton {
     width: auto;
     background-color: #333;
     color: #fff;
