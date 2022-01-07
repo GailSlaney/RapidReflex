@@ -46,6 +46,11 @@ a {
 }
 .shapes_timer {
     display: grid;
+    grid-template-areas: 
+        ".imagesBox .timerGrid"
+        ".imagesBox ."
+        ".colAndShapeName .colAndShapeName"
+        ".startButton .";
     justify-items: center;
     grid-template-columns: 4fr 1fr;
     gap: 50px;
@@ -84,8 +89,9 @@ a {
 
 .timerGrid {
     display: grid;
-    grid-template-rows:3fr, 1fr, 3fr ;
-    justify-items: center;
+    /*grid-template-rows:1fr 1fr;*/
+    justify-items:center;
+    align-items: flex-start;
     grid-row-gap: 10px;
     width: 100%;
 }
@@ -123,8 +129,22 @@ a {
     width: 250px;
 }
 
-bu
-    
+button {
+    cursor: pointer;
+    background: transparent;
+    padding: 0;
+    border: none;
+    margin: 0;
+    outline: none;
+}
+
+#playButton {
+    display: block;
+}
+
+#pauseButton {
+    display: none;
+}
 
 #colAndShapeName {
     width: 90%;
@@ -149,3 +169,19 @@ bu
     font: Tahoma 30px  bold;
 }
 
+.imagesBox {
+    grid-column: 1;
+    grid-row: 1;
+}
+.timerGrid {
+    grid-column: 2;
+    grid-row: 1;
+}
+.colAndShapeName {
+    grid-column: 1 / 3;
+    grid-row: 2;
+}
+.startButton {
+    grid-column: 1;
+    grid-row: 3;
+}
