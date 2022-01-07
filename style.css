@@ -45,13 +45,19 @@ a {
     */
 }
 .shapes_timer {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+    display: flex;
+    /*grid-template-columns: 4fr 1fr;*/
     gap: 50px;
 }
 
-#imagesBox1 {
+#imagesBox {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: space-evenly;
+    gap: 20px;
+    flex-grow: 1;
     border: black solid 2px;
     /*grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -67,6 +73,10 @@ a {
     */
 }
 
+/*#imagesBox > a href {
+    flex: 1 1 150px;
+}
+*/
 
 /*
 .level1Grid  {
