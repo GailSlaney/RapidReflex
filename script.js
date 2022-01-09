@@ -79,37 +79,41 @@ let randomInt,
     shapeName,
     level = 1;
 
-const level_Grid = document.getElementById("level_Grid");
+const sGrid = document.getElementById("imagesBox");
 /*let rows = document.getElementsByClassName("gridRow");
 let cells = document.getElementsByName("cell");*/
 
 //let gridCells = document.querySelectorAll('.child');
 //console.log(gridCells);
 
-let gridSize = 4;
+let numShapes = 2;
 //let totRows = Math.sqrt(gridSize);
 //let totCols = totRows;
-console.log(gridSize);
+console.log(numShapes);
 
 //HOW DO I ACTUALLY DISPLAY THE GRID?
-getGridLayout(gridSize);
-console.log(layout);
+getGridLayout(numShapes);
+//console.log(layout);
 
-for (let i = 0; i < gridSize; i++) {
-    getRandomInt();
-    console.log(randomInt);
-    //initial button click called when form opens
-    let shapeImage = getImage(randomInt);
-    console.log(shapeImage);
-    placeImage(shapeImage, i);
-    
+//Populates the random shapes
+function getGridLayout(numShapes) {
+    for (let i = 0; i < numShapes; i++) {
+        getRandomInt();
+        console.log(randomInt);
+        //initial button click called when form opens
+        let shapeImage = getImage(randomInt);
+        console.log(shapeImage);
+        placeImage(shapeImage, i);
+        
+    }
 }
-
 //Let's Play button is clicked
-const button = document.querySelector('.button');
-button.addEventListener('click', (e) => {
+const startButton = document.querySelector('.startButton');
+startButton.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('button click');
+    numShapes = 2;
+    
     //Will need to getRandomInt for all cells in grid...4, 9, 16...
     getRandomInt();
     buttonClick(RandomInt);
@@ -139,20 +143,15 @@ function getImage(randomInt) {
         return shape.image;
     });
     
-    //img.src = shapeImage;
+    //append the image to the list of images in box
+    img.src = shapeImage;
     //should img.src actually be child.
 }
 
+/*function placeImage(shapeImage, i) {
 
-//creates the grid
-function getGridLayout(gridSize) {
-    let totRows = Math.sqrt(gridSize);
-    //let gridShape = level_Grid.
-    
-/* makeRows(totRows);
-   makeColumns(totRows);
-   */
-}
+}*/
+
 
 /*
 //creates rows
