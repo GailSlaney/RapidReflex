@@ -103,8 +103,8 @@ function getGridLayout(numShapes) {
         //initial button click called when form opens
         let shapeImage = getImage(randomInt);
         console.log(shapeImage);
-        placeImage(shapeImage, i);
-        
+       /* placeImage(shapeImage, i);
+        */
     }
 }
 //Let's Play button is clicked
@@ -113,10 +113,13 @@ startButton.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('button click');
     numShapes = 2;
+    buttonClick(numShapes);
+    
+   
     
     //Will need to getRandomInt for all cells in grid...4, 9, 16...
-    getRandomInt();
-    buttonClick(RandomInt);
+    //getRandomInt();
+   // buttonClick(RandomInt);
     console.log('actual button click');
 })
 
@@ -152,6 +155,10 @@ function getImage(randomInt) {
 
 }*/
 
+function buttonClick(numShapes) {
+    clearText();
+    getGridLayout()
+}
 
 /*
 //creates rows
