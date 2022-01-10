@@ -103,24 +103,22 @@ function getGridLayout(numShapes) {
         //initial button click called when form opens
         let shapeImage = getImage(randomInt);
         console.log(shapeImage);
-       /* placeImage(shapeImage, i);
-        */
+       
     }
 }
+
 //Let's Play button is clicked
 const startButton = document.querySelector('.startButton');
 startButton.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('button click');
+    //clear any previous images from grid.
+    clearImages();
+    //Game begins with 2 images displayed
     numShapes = 2;
     buttonClick(numShapes);
-    
-   
-    
-    //Will need to getRandomInt for all cells in grid...4, 9, 16...
-    //getRandomInt();
-   // buttonClick(RandomInt);
     console.log('actual button click');
+    
 })
 
 //Shape is clicked
@@ -147,17 +145,18 @@ function getImage(randomInt) {
     });
     
     //append the image to the list of images in box
+    //img.src = shapeImage;
+    let img = document.createElement("img");
     img.src = shapeImage;
-    //should img.src actually be child.
+    document.getElementById('imagesBox').appendChild(img);
 }
 
-/*function placeImage(shapeImage, i) {
 
-}*/
 
 function buttonClick(numShapes) {
     clearText();
-    getGridLayout()
+    clearImages();
+    getGridLayout(numShapes)
 }
 
 /*
@@ -183,12 +182,4 @@ function makeColumns(totRows) {
         };
     };
 };
-*/
-
-/*
-//fills cells with images
-function placeImage(shapeImage, i) {
-    let row = Math.floor(i/totRows);
-    let col = i % totRows;
-}
 */
