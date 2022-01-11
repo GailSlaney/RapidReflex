@@ -92,7 +92,7 @@ let numShapes = 2;
 //let totCols = totRows;
 console.log(numShapes);
 
-clearImages();
+//clearImages();
 getGridLayout(numShapes);
 //console.log(layout);
 
@@ -114,7 +114,7 @@ startButton.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('button click');
     //clear any previous images from grid.
-    clearImages();
+    //clearImages();
     //Game begins with 2 images displayed
     numShapes = 2;
     buttonClick(numShapes);
@@ -153,16 +153,51 @@ function getImage(randomInt) {
     document.getElementById('imagesBox').appendChild(img);
 }
 
+function getShapeColor() {
+    //get current shapes from imagesBox. Are they automatically indexed 0, 1, etc?
+    //randomly select one of these... maxNumber = # of "a" elements in "imagesBox"
+    maxNumber= document.getElementsByTagName("a").length;
+    getRandomInt(maxNumber);
+    //associate randomInt with img.src ... shapes.image = img.src
+    randomImage=img.src;
+    shapeColor = shapes.filter(function(shape){
+        return shape.image === randomImage;
+    }) .map(function(shape){
+        return shape.color;
+    })
+}
+
+function getShapeName() {
+    //get current shapes from imagesBox. Are they automatically indexed 0, 1, etc?
+    //randomly select one of these... maxNumber = # of "a" elements in "imagesBox"
+    maxNumber= document.getElementsByTagName("a").length;
+    getRandomInt(maxNumber);
+    //associate randomInt with img.src ... shapes.image = img.src
+    randomImage=img.src;
+    shapeName = shapes.filter(function(shape){
+        return shape.image === randomImage;
+    }) .map(function(shape){
+        return shape.name;
+    })
+}
+
+function getColorAndName(shapeColor, shapeName) {
+    colorAndName = `${shapeColor} ${shapeName}`;
+    console.log(colorAndName);
+    return colorAndName
+}
+
 //UNSURE HOW TO REMOVE ALL IMAGES CURRENTLY IN FLEXBOX..
+/* Make code visible again when I understand how to remove images
 function clearImages() {
     //let image = document.querySelector("img");
-    let img = document.getElementsByTagName("a href");
-    img.parentNode.removeChild("a href");
+    let box = document.getElementById("imagesBox");
+    box.removeChild("a");
     //document.getElementById('imagesBox').removeChild(img);
     //image.parentNode.removeChild(image);
     //ans.textContent = '';
 }
-
+*/
 function clearText() {
     const tText = document.querySelector('colAndShapeName h2');
     tText.textContent = '';
@@ -170,10 +205,16 @@ function clearText() {
 
 function buttonClick(numShapes) {
     clearText();
-    clearImages();
-    getGridLayout(numShapes)
+    //clearImages();
+    getGridLayout(numShapes);
+    getShapeToClick();
 }
 
+function getShapeToClick() {
+    getColorAndName();
+    const clickThis = document.getElementById('colAndShapeName h2')
+    clickThis.textContent = colorAndName;
+}
 /*
 //creates rows
 function makeRows(totRows) {
