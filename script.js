@@ -78,6 +78,7 @@ let randomInt,
     shapeColor,
     shapeName,
     shapeImage,
+    colorAndName,
     level = 1;
 
 const sGrid = document.getElementById("imagesBox");
@@ -96,17 +97,6 @@ console.log(numShapes);
 getGridLayout(numShapes);
 //console.log(layout);
 
-//Populates the random shapes
-function getGridLayout(numShapes) {
-    for (let i = 0; i < numShapes; i++) {
-        getRandomInt();
-        console.log(randomInt);
-        //initial button click called when form opens
-        shapeImage = getImage(randomInt);
-        console.log(shapeImage);
-       
-    }
-}
 
 //Let's Play button is clicked
 const startButton = document.querySelector('.startButton');
@@ -131,6 +121,17 @@ img.addEventListener('click', (e) => {
     shapeClick();
 })
 
+//Populates the random shapes
+function getGridLayout(numShapes) {
+    for (let i = 0; i < numShapes; i++) {
+        getRandomInt();
+        console.log(randomInt);
+        //initial button click called when form opens
+        shapeImage = getImage(randomInt);
+        console.log(shapeImage);
+       
+    }
+}
 
 //getRandomInt function determines which shapes and colors to display
 function getRandomInt(maxNumber = shapes.length) {
@@ -138,6 +139,13 @@ function getRandomInt(maxNumber = shapes.length) {
     return randomInt;
 }
 
+
+function buttonClick(numShapes) {
+    clearText();
+    //clearImages();
+    getGridLayout(numShapes);
+    getShapeToClick();
+}
 
 function getImage(randomInt) {
     shapeImage = shapes.filter(function(shape){
@@ -199,20 +207,15 @@ function clearImages() {
 }
 */
 function clearText() {
-    const tText = document.querySelector('colAndShapeName h2');
+    //const tText = document.querySelector('colAndShapeName h2');
+    const tText = document.querySelector('h3');
     tText.textContent = '';
 }
 
-function buttonClick(numShapes) {
-    clearText();
-    //clearImages();
-    getGridLayout(numShapes);
-    getShapeToClick();
-}
 
 function getShapeToClick() {
     getColorAndName();
-    const clickThis = document.getElementById('colAndShapeName h2')
+    const clickThis = document.getElementById('h3');
     clickThis.textContent = colorAndName;
 }
 /*
