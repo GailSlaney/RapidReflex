@@ -77,6 +77,7 @@ const shapes = [
 let randomInt,
     shapeColor,
     shapeName,
+    shapeImage,
     level = 1;
 
 const sGrid = document.getElementById("imagesBox");
@@ -91,7 +92,7 @@ let numShapes = 2;
 //let totCols = totRows;
 console.log(numShapes);
 
-//HOW DO I ACTUALLY DISPLAY THE GRID?
+clearImages();
 getGridLayout(numShapes);
 //console.log(layout);
 
@@ -101,7 +102,7 @@ function getGridLayout(numShapes) {
         getRandomInt();
         console.log(randomInt);
         //initial button click called when form opens
-        let shapeImage = getImage(randomInt);
+        shapeImage = getImage(randomInt);
         console.log(shapeImage);
        
     }
@@ -130,6 +131,7 @@ img.addEventListener('click', (e) => {
     shapeClick();
 })
 
+
 //getRandomInt function determines which shapes and colors to display
 function getRandomInt(maxNumber = shapes.length) {
     randomInt = Math.floor(Math.random() * maxNumber);
@@ -151,7 +153,13 @@ function getImage(randomInt) {
     document.getElementById('imagesBox').appendChild(img);
 }
 
-
+function clearImages() {
+    //let image = document.querySelector("img");
+    let img = document.createElement("img");
+    document.getElementById('imagesBox').removeChild(img);
+    //image.parentNode.removeChild(image);
+    //ans.textContent = '';
+}
 
 function buttonClick(numShapes) {
     clearText();
