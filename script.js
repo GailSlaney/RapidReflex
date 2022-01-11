@@ -153,12 +153,19 @@ function getImage(randomInt) {
     document.getElementById('imagesBox').appendChild(img);
 }
 
+//UNSURE HOW TO REMOVE ALL IMAGES CURRENTLY IN FLEXBOX..
 function clearImages() {
     //let image = document.querySelector("img");
-    let img = document.createElement("img");
-    document.getElementById('imagesBox').removeChild(img);
+    let img = document.getElementsByTagName("a href");
+    img.parentNode.removeChild("a href");
+    //document.getElementById('imagesBox').removeChild(img);
     //image.parentNode.removeChild(image);
     //ans.textContent = '';
+}
+
+function clearText() {
+    const tText = document.querySelector('colAndShapeName h2');
+    tText.textContent = '';
 }
 
 function buttonClick(numShapes) {
