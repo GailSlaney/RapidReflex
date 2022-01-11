@@ -156,7 +156,8 @@ function getImage(randomInt) {
     
     //append the image to the list of images in box
     //img.src = shapeImage;
-    let img = document.createElement("img");
+    let img = document.createElement("a href");
+    img = img.createElement("img");
     img.src = shapeImage;
     document.getElementById('imagesBox').appendChild(img);
 }
@@ -214,7 +215,9 @@ function clearText() {
 
 
 function getShapeToClick() {
-    getColorAndName();
+    getShapeName();
+    getShapeColor();
+    getColorAndName(shapeColor, shapeName);
     const clickThis = document.getElementById('h3');
     clickThis.textContent = colorAndName;
 }
