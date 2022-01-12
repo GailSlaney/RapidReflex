@@ -155,9 +155,9 @@ function getImage(randomInt) {
     });
     
     //append the image to the list of images in box
-    //img.src = shapeImage;
-    let img = document.createElement("a href");
-    img = img.createElement("img");
+    let img = document.createElement("img");
+    /*let img = document.createElement("a href");
+    img = img.createElement("img");*/
     img.src = shapeImage;
     document.getElementById('imagesBox').appendChild(img);
 }
@@ -165,7 +165,7 @@ function getImage(randomInt) {
 function getShapeColor() {
     //get current shapes from imagesBox. Are they automatically indexed 0, 1, etc?
     //randomly select one of these... maxNumber = # of "a" elements in "imagesBox"
-    maxNumber= document.getElementsByTagName("a").length;
+    maxNumber= document.getElementsByTagName("img").length;
     getRandomInt(maxNumber);
     //associate randomInt with img.src ... shapes.image = img.src
     randomImage=img.src;
@@ -179,7 +179,7 @@ function getShapeColor() {
 function getShapeName() {
     //get current shapes from imagesBox. Are they automatically indexed 0, 1, etc?
     //randomly select one of these... maxNumber = # of "a" elements in "imagesBox"
-    maxNumber= document.getElementsByTagName("a").length;
+    maxNumber= document.getElementsByTagName("img").length;
     getRandomInt(maxNumber);
     //associate randomInt with img.src ... shapes.image = img.src
     randomImage=img.src;
