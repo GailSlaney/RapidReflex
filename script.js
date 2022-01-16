@@ -145,6 +145,7 @@ function buttonClick(numShapes) {
     //clearImages();
     getGridLayout(numShapes);
     getShapeToClick();
+    startTimer();
 }
 
 function getImage(randomInt) {
@@ -221,6 +222,17 @@ function getShapeToClick() {
     const clickThis = document.getElementById('h3');
     clickThis.textContent = colorAndName;
 }
+
+function startTimer() {
+    startTime = Date.now() - elapsedTime;
+    timerInterval = setInterval(function printTime() {
+        elapsedTime = Date.now() - startTime;
+        print(timeToString(elapsedTime));
+    }, 10);
+    //showButton("PAUSE");
+
+}
+
 /*
 //creates rows
 function makeRows(totRows) {
