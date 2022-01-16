@@ -151,7 +151,7 @@ function buttonClick(numShapes) {
 function getImage(randomInt) {
     shapeImage = shapes.filter(function(shape){
         return shape.id === randomInt;
-    }) .map(function(shape){
+    }).map(function(shape){
         return shape.image;
     });
     
@@ -172,7 +172,7 @@ function getShapeColor() {
     randomImage=img.src;
     shapeColor = shapes.filter(function(shape){
         return shape.image === randomImage;
-    }) .map(function(shape){
+    }).map(function(shape){
         return shape.color;
     })
 }
@@ -232,6 +232,46 @@ function startTimer() {
     //showButton("PAUSE");
 
 }
+function pause() {
+    clearInterval(timerInterval);
+    showButton("PLAY");
+}
+
+function reset(){
+    clearInterval(timerInterval);
+    print("00:00:00:000");
+    elapsedTime = 0;
+    showButton("PLAY");
+}
+
+
+function showButton(buttonKey) {
+    const buttonToShow = buttonKey === "PLAY" ? playButton : pauseButton;
+    const buttonToHide = buttonKey === "PLAY" ? pauseButton : playButton;
+    buttonToShow.style.display = "block";
+    buttonToHide.style.display = "none";
+}
+
+function timeToString(time) {
+    let diffInHrs = time / 3600000;
+    let hh = Math.floor(diffInHrs);
+
+    let diffInMin = (diffInHrs - hh) * 60;
+    let mm = Math.floor(diffInMin);
+
+    let diffInSec = (diffInMin - mm) * 60;
+    let ss = Math.floor(diffInSec);
+
+    let diffInMs = (diffInSec - ss) * 1000;
+    let ms = Math.floor(diffInMs);
+
+    let formattedHH = hh.toString().padStart(2, "0");
+    let formattedMM = mm.toString().padStart(2, "0");
+    let formattedSS = ss.toString().padStart(2, "0");
+    let formattedMS = ms.toString().padStart(3, "0");
+    return `${formattedHH}:${formattedMM}:${formattedSS}:${formattedMS}`;
+}
+
 
 /*
 //creates rows
