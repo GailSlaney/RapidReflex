@@ -60,15 +60,15 @@ a {
 
 #imagesBox {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: space-evenly;
-    gap: 5px;
-    flex-grow: 1;
+    gap: 10px;
+   flex-grow: 1;
     flex-shrink: 1;
-    width: auto;
-    height: auto;
+    /*width: auto;
+    height: ;*/
     border: black solid 2px;
     /*grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);

@@ -79,6 +79,8 @@ let randomInt,
     shapeName,
     shapeImage,
     colorAndName,
+    iBox,
+    boxShapes,
     level = 1;
 
 const sGrid = document.getElementById("imagesBox");
@@ -127,7 +129,7 @@ function getGridLayout(numShapes) {
         getRandomInt();
         console.log(randomInt);
         //initial button click called when form opens
-        shapeImage = getImage(randomInt);
+        getImage(randomInt);
         console.log(shapeImage);
        
     }
@@ -163,6 +165,22 @@ function getImage(randomInt) {
     document.getElementById('imagesBox').appendChild(img);
 }
 
+function getShape() {
+    //get current shapes from imagesBox. Are they automatically indexed 0, 1, etc?
+    //randomly select one of these... maxNumber = # of "a" elements in "imagesBox"
+    iBox = document.getElementById("imagesBox");
+    numShapes = iBox.getElementsByTagName("img").length;
+    //maxNumber= document.getElementsByTagName("img").length;
+    getRandomInt(numShapes);
+    //associate randomInt with img.src ... shapes.image = img.src
+    randomImage=img.src;
+    shapeName = shapes.filter(function(shape){
+        return shape.image === randomImage;
+    }).map(function(shape){
+        return shape.name;
+    })
+}
+
 function getShapeColor() {
     //get current shapes from imagesBox. Are they automatically indexed 0, 1, etc?
     //randomly select one of these... maxNumber = # of "a" elements in "imagesBox"
@@ -180,8 +198,10 @@ function getShapeColor() {
 function getShapeName() {
     //get current shapes from imagesBox. Are they automatically indexed 0, 1, etc?
     //randomly select one of these... maxNumber = # of "a" elements in "imagesBox"
-    maxNumber= document.getElementsByTagName("img").length;
-    getRandomInt(maxNumber);
+    iBox = document.getElementById("imagesBox");
+    numShapes = iBox.getElementsByTagName("img").length;
+    //maxNumber= document.getElementsByTagName("img").length;
+    getRandomInt(numShapes);
     //associate randomInt with img.src ... shapes.image = img.src
     randomImage=img.src;
     shapeName = shapes.filter(function(shape){
@@ -216,8 +236,9 @@ function clearText() {
 
 
 function getShapeToClick() {
-    getShapeName();
+    getShape();
     getShapeColor();
+    getShapeName();
     getColorAndName(shapeColor, shapeName);
     const clickThis = document.getElementById('h3');
     clickThis.textContent = colorAndName;
