@@ -186,7 +186,7 @@ function getShapeName() {
     randomImage=img.src;
     shapeName = shapes.filter(function(shape){
         return shape.image === randomImage;
-    }) .map(function(shape){
+    }).map(function(shape){
         return shape.name;
     })
 }
