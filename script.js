@@ -172,8 +172,9 @@ function getShape() {
     numShapes = iBox.getElementsByTagName("img").length;
     //maxNumber= document.getElementsByTagName("img").length;
     getRandomInt(numShapes);
+    console.log(randomInt);
     //associate randomInt with img.src ... shapes.image = img.src
-    randomImage=img.src;
+    randomImage=iBox.img(randomInt);
     shapeName = shapes.filter(function(shape){
         return shape.image === randomImage;
     }).map(function(shape){
