@@ -90,7 +90,7 @@ let cells = document.getElementsByName("cell");*/
 //let gridCells = document.querySelectorAll('.child');
 //console.log(gridCells);
 
-let numShapes = 2;
+let numShapes = 1;
 //let totRows = Math.sqrt(gridSize);
 //let totCols = totRows;
 console.log(numShapes);
@@ -158,14 +158,16 @@ function getImage(randomInt) {
     });
     
     //append the image to the list of images in box
+    /*let a = document.createElement("a");
+    a.setAttribute("href", "");
+    a.append("img");
+    let img = document.createElement("a href");*/
     let img = document.createElement("img");
-    /*let img = document.createElement("a href");
-    img = img.createElement("img");*/
     img.src = shapeImage;
     document.getElementById('imagesBox').appendChild(img);
 }
 
-function getShape() {
+/*function getShape() {
     //get current shapes from imagesBox. Are they automatically indexed 0, 1, etc?
     //randomly select one of these... maxNumber = # of "a" elements in "imagesBox"
     iBox = document.getElementById("imagesBox");
@@ -181,6 +183,7 @@ function getShape() {
         return shape.name;
     })
 }
+*/
 
 function getShapeColor() {
     //get current shapes from imagesBox. Are they automatically indexed 0, 1, etc?
@@ -199,8 +202,8 @@ function getShapeColor() {
 function getShapeName() {
     //get current shapes from imagesBox. Are they automatically indexed 0, 1, etc?
     //randomly select one of these... maxNumber = # of "a" elements in "imagesBox"
-    iBox = document.getElementById("imagesBox");
-    numShapes = iBox.getElementsByTagName("img").length;
+    //iBox = document.getElementById("imagesBox");
+    //numShapes = iBox.getElementsByTagName("img").length;
     //maxNumber= document.getElementsByTagName("img").length;
     getRandomInt(numShapes);
     //associate randomInt with img.src ... shapes.image = img.src
@@ -237,7 +240,7 @@ function clearText() {
 
 
 function getShapeToClick() {
-    getShape();
+    //getShape();
     getShapeColor();
     getShapeName();
     getColorAndName(shapeColor, shapeName);
