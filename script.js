@@ -90,7 +90,7 @@ let cells = document.getElementsByName("cell");*/
 //let gridCells = document.querySelectorAll('.child');
 //console.log(gridCells);
 
-let numShapes = 1;
+let numShapes = 4;
 //let totRows = Math.sqrt(gridSize);
 //let totCols = totRows;
 console.log(numShapes);
@@ -158,13 +158,15 @@ function getImage(randomInt) {
     });
     
     //append the image to the list of images in box
-    /*let a = document.createElement("a");
-    a.setAttribute("href", "");
-    a.append("img");
-    let img = document.createElement("a href");*/
+    
     let img = document.createElement("img");
+    let a = document.createElement("a");
+    let div = document.createElement("div");
     img.src = shapeImage;
-    document.getElementById('imagesBox').appendChild(img);
+    a.href = "";
+    a.appendChild(img);
+    div.appendChild(a);
+    document.getElementById('imagesBox').appendChild(div);
 }
 
 /*function getShape() {

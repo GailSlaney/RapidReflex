@@ -66,9 +66,9 @@ a {
     /*align-items: space-evenly;*/
     gap: 10px;
     flex-grow: 1;
-    flex-shrink: 1;
-    /*width: auto;
-    height: 500px;*/
+    /*flex-shrink: 1;
+    width: auto;*/
+    height: 500px;
     border: black solid 2px;
     /*grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -84,10 +84,24 @@ a {
     */
 }
 
+#imagesBox div {
+    display: flex;
+    flex-shrink: 1;
+    flex-wrap: wrap;
+    object-fit: contain;
+    object-position: 50% 50%;
+}
+
 a {
 display: flex;
-flex-shrink: inherit;
+flex-shrink: 1;
 flex-wrap: wrap;
+
+}
+
+img {
+    object-fit: contain;
+    object-position: 50% 50%;
 }
 
 .sImage  {
