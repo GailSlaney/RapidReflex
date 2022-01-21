@@ -62,15 +62,17 @@ a {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    flex: 1 1 0;
     justify-content: center;
-    /*align-items: space-evenly;*/
+    align-items: space-evenly;
     gap: 10px;
-    flex-grow: 1;
-  flex-shrink: 1;
+   
     width: auto;
     height: auto;
     border: black solid 2px;
-    /*grid-template-columns: repeat(2, 1fr);
+     /*flex-grow: 1;
+    flex-shrink: 1;
+   grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-auto-flow: row;
     gap: 25px;
@@ -84,12 +86,14 @@ a {
     */
 }
 
-#imagesBox div {
-    display: flex;
-    flex-shrink: 1;
-    flex-wrap: wrap;
+#imagesBox a {
+    flex: 1 1 0;
     object-fit: contain;
     object-position: 50% 50%;
+    /* display: flex;    
+    flex-shrink: 1;
+    flex-wrap: wrap;*/
+   
 }
 
 /*a {
@@ -103,11 +107,15 @@ img {
     object-fit: contain;
     object-position: 50% 50%;
 }
+*/
 
 .sImage  {
-    flex: auto;
+    flex: 1 1 0;
+    object-fit: contain;
+    object-position: 50% 50%;
+    /*    flex: auto;*/
 }
-*/
+
 
 .timerGrid {
     display: grid;

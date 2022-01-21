@@ -161,12 +161,13 @@ function getImage(randomInt) {
     
     let img = document.createElement("img");
     let a = document.createElement("a");
-    let div = document.createElement("div");
+    //let div = document.createElement("div");
     img.src = shapeImage;
+    img.setAttribute("class", "sImage");
     a.href = "";
     a.appendChild(img);
-    div.appendChild(a);
-    document.getElementById('imagesBox').appendChild(div);
+    //div.appendChild(a);
+    document.getElementById('imagesBox').appendChild(a);
 }
 
 /*function getShape() {
