@@ -90,7 +90,7 @@ let cells = document.getElementsByName("cell");*/
 //let gridCells = document.querySelectorAll('.child');
 //console.log(gridCells);
 
-let numShapes = 4;
+let numShapes = 8;
 //let totRows = Math.sqrt(gridSize);
 //let totCols = totRows;
 console.log(numShapes);
@@ -144,7 +144,7 @@ function getRandomInt(maxNumber = shapes.length) {
 
 function buttonClick(numShapes) {
     clearText();
-    //clearImages();
+    clearImages();
     getGridLayout(numShapes);
     getShapeToClick();
     startTimer();
@@ -225,16 +225,17 @@ function getColorAndName(shapeColor, shapeName) {
 }
 
 //UNSURE HOW TO REMOVE ALL IMAGES CURRENTLY IN FLEXBOX..
-/* Make code visible again when I understand how to remove images
+// Make code visible again when I understand how to remove images
 function clearImages() {
     //let image = document.querySelector("img");
     let box = document.getElementById("imagesBox");
+    
     box.removeChild("a");
     //document.getElementById('imagesBox').removeChild(img);
     //image.parentNode.removeChild(image);
     //ans.textContent = '';
 }
-*/
+
 function clearText() {
     //const tText = document.querySelector('colAndShapeName h2');
     const tText = document.querySelector('h3');

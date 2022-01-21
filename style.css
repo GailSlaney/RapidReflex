@@ -9,10 +9,7 @@ body    {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
     font-weight: normal;
-    /*width: 90%;
-    max-width: 900px;
-    margin: 2em auto;
-    */
+    
 }
 
 a {
@@ -23,12 +20,7 @@ a {
     width: 90%;
     max-width: 900px;
     margin: auto;
-    /*
-    border-radius: 5px;
-    padding: 10px;
-    background-color: rgb(207, 232, 220);
-    border: 2px solid   rgb(79, 185, 227);
-    */    
+     
 }
 
 .box_1 {
@@ -41,8 +33,7 @@ a {
 
 .box_1 h1 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /*font-size: 25px;
-    */
+    
 }
 .shapes_timer {
     display: grid;
@@ -62,15 +53,16 @@ a {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    flex: 1 1 0;
-    justify-content: center;
-    align-items: space-evenly;
+   
+    /*justify-content: center;
+    align-items: space-evenly;*/
     gap: 10px;
    
     width: auto;
     height: auto;
     border: black solid 2px;
-     /*flex-grow: 1;
+     /* flex: 1 1 0;
+     flex-grow: 1;
     flex-shrink: 1;
    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -87,10 +79,10 @@ a {
 }
 
 #imagesBox a {
-    flex: 1 1 0;
-    object-fit: contain;
+      /* flex: 1 1 0;
+ object-fit: contain;
     object-position: 50% 50%;
-    /* display: flex;    
+     display: flex;    
     flex-shrink: 1;
     flex-wrap: wrap;*/
    
@@ -110,10 +102,12 @@ img {
 */
 
 .sImage  {
-    flex: 1 1 0;
     object-fit: contain;
     object-position: 50% 50%;
-    /*    flex: auto;*/
+    height: 100%;
+    width: 100%;
+    
+    /*flex: auto;*/
 }
 
 
