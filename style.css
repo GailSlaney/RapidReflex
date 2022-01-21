@@ -60,15 +60,15 @@ a {
 
 #imagesBox {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     /*align-items: space-evenly;*/
     gap: 10px;
     flex-grow: 1;
-    /*flex-shrink: 1;
-    width: auto;*/
-    height: 500px;
+  flex-shrink: 1;
+    width: auto;
+    height: auto;
     border: black solid 2px;
     /*grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -92,7 +92,7 @@ a {
     object-position: 50% 50%;
 }
 
-a {
+/*a {
 display: flex;
 flex-shrink: 1;
 flex-wrap: wrap;
@@ -107,7 +107,7 @@ img {
 .sImage  {
     flex: auto;
 }
-
+*/
 
 .timerGrid {
     display: grid;
