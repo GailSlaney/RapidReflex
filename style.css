@@ -54,8 +54,8 @@ a {
     flex-direction: row;
     flex-wrap: wrap;
    
-    /*justify-content: center;
-    align-items: space-evenly;*/
+   justify-content: center;
+    /*align-items: space-evenly;*/
     gap: 10px;
    
     width: auto;
@@ -84,8 +84,10 @@ a {
     object-position: 50% 50%;
      display: flex;    
     flex-shrink: 1;
+    
     flex-wrap: wrap;*/
-   
+    flex: 0 0 200px;
+    align-self: center;
 }
 
 /*a {
@@ -98,13 +100,14 @@ flex-wrap: wrap;
 img {
     object-fit: contain;
     object-position: 50% 50%;
+    width: 100%;
 }
 */
 
 .sImage  {
     object-fit: contain;
     object-position: 50% 50%;
-    height: 100%;
+   /* height: 100%;*/
     width: 100%;
     
     /*flex: auto;*/

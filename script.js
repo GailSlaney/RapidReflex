@@ -90,7 +90,7 @@ let cells = document.getElementsByName("cell");*/
 //let gridCells = document.querySelectorAll('.child');
 //console.log(gridCells);
 
-let numShapes = 8;
+let numShapes = 2;
 //let totRows = Math.sqrt(gridSize);
 //let totCols = totRows;
 console.log(numShapes);
