@@ -91,11 +91,8 @@ let cells = document.getElementsByName("cell");*/
 //console.log(gridCells);
 
 let numShapes = 2;
-//let totRows = Math.sqrt(gridSize);
-//let totCols = totRows;
 console.log(numShapes);
 
-//clearImages();
 getGridLayout(numShapes);
 //console.log(layout);
 
@@ -105,8 +102,7 @@ const startButton = document.querySelector('.startButton');
 startButton.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('button click');
-    //clear any previous images from grid.
-    //clearImages();
+    
     //Game begins with 2 images displayed
     numShapes = 2;
     buttonClick(numShapes);
@@ -161,13 +157,36 @@ function getImage(randomInt) {
     
     let img = document.createElement("img");
     let a = document.createElement("a");
+    let imagesBox = document.getElementById("imagesBox");
     //let div = document.createElement("div");
+    //div.setAttribute("class", "sImgDiv");
     img.src = shapeImage;
     img.setAttribute("class", "sImage");
+    
     a.href = "";
+    a.setAttribute("class", "sImgA");
     a.appendChild(img);
+    imagesBox.appendChild(a);
     //div.appendChild(a);
-    document.getElementById('imagesBox').appendChild(a);
+    //document.getElementById("imagesBox").appendChild(a);
+}
+
+//Remove images from box
+function clearImages() {
+    let sImgA = document.getElementsByClassName("sImgA");
+    let imagesBox = document.getElementById("imagesBox");
+    let a = document.querySelector("a");
+    let childElementCount = imagesBox.childElementCount;
+    console.log(imagesBox.childElementCount);
+    console.log(imagesBox.childNodes);
+    console.log(imagesBox.children);
+    console.log(imagesBox.lastElementChild);
+    let child = imagesBox.lastElementChild;
+    while (child) {
+        imagesBox.removeChild(child);
+        child = imagesBox.lastElementChild;
+    }
+   
 }
 
 /*function getShape() {
@@ -224,17 +243,7 @@ function getColorAndName(shapeColor, shapeName) {
     return colorAndName
 }
 
-//UNSURE HOW TO REMOVE ALL IMAGES CURRENTLY IN FLEXBOX..
-// Make code visible again when I understand how to remove images
-function clearImages() {
-    //let image = document.querySelector("img");
-    let box = document.getElementById("imagesBox");
-    
-    box.removeChild("a");
-    //document.getElementById('imagesBox').removeChild(img);
-    //image.parentNode.removeChild(image);
-    //ans.textContent = '';
-}
+
 
 function clearText() {
     //const tText = document.querySelector('colAndShapeName h2');

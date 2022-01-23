@@ -78,15 +78,15 @@ a {
     */
 }
 
-#imagesBox a {
-      /* flex: 1 1 0;
- object-fit: contain;
-    object-position: 50% 50%;
-     display: flex;    
-    flex-shrink: 1;
-    
-    flex-wrap: wrap;*/
-    flex: 0 0 200px;
+/*
+#imagesBox div {
+     
+    flex: 0 1 200px;
+    align-self: center;
+}
+*/
+.sImgA {
+    flex: 0 1 200px;
     align-self: center;
 }
 
@@ -107,8 +107,8 @@ img {
 .sImage  {
     object-fit: contain;
     object-position: 50% 50%;
-   /* height: 100%;*/
-    width: 100%;
+   /* height: 100%;
+    width: 100%;*/
     
     /*flex: auto;*/
 }
