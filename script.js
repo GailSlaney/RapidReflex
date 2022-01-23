@@ -75,6 +75,7 @@ const shapes = [
 
 //Page initially opens
 let randomInt,
+    shapeArray,
     shapeColor,
     shapeName,
     shapeImage,
@@ -147,11 +148,15 @@ function buttonClick(numShapes) {
 }
 
 function getImage(randomInt) {
-    shapeImage = shapes.filter(function(shape){
+   /* shapeImage = shapes.filter(function(shape){
         return shape.id === randomInt;
     }).map(function(shape){
         return shape.image;
     });
+    console.log(shapeImage);*/
+    shapeArray = shapes[randomInt];
+    console.log(shapeArray);
+    shapeImage = shapeArray.image;
     
     //append the image to the list of images in box
     
@@ -210,15 +215,21 @@ function clearImages() {
 function getShapeColor() {
     //get current shapes from imagesBox. Are they automatically indexed 0, 1, etc?
     //randomly select one of these... maxNumber = # of "a" elements in "imagesBox"
-    maxNumber= document.getElementsByTagName("img").length;
+    let imagesBox = document.getElementById("imagesBox");
+    let maxNumber= imagesBox.childElementCount;
+    let children = imagesBox.children;
     getRandomInt(maxNumber);
     //associate randomInt with img.src ... shapes.image = img.src
+    let selShape = children[randomInt];
+    console.log(selShape);
+    
     randomImage=img.src;
     shapeColor = shapes.filter(function(shape){
         return shape.image === randomImage;
     }).map(function(shape){
         return shape.color;
     })
+    console.log(shapeColor);
 }
 
 function getShapeName() {
@@ -227,14 +238,21 @@ function getShapeName() {
     //iBox = document.getElementById("imagesBox");
     //numShapes = iBox.getElementsByTagName("img").length;
     //maxNumber= document.getElementsByTagName("img").length;
-    getRandomInt(numShapes);
+    let imagesBox = document.getElementById("imagesBox");
+    let maxNumber= imagesBox.childElementCount;
+    let children = imagesBox.children;
+    getRandomInt(maxNumber);
     //associate randomInt with img.src ... shapes.image = img.src
+    let selShape = children[randomInt];
+    console.log(selShape);
+    
     randomImage=img.src;
     shapeName = shapes.filter(function(shape){
         return shape.image === randomImage;
     }).map(function(shape){
         return shape.name;
     })
+    console.log(shapeName);
 }
 
 function getColorAndName(shapeColor, shapeName) {
