@@ -76,12 +76,14 @@ const shapes = [
 //Page initially opens
 let randomInt,
     shapeArray,
+    shapesArray = new Array(0),
     shapeColor,
     shapeName,
     shapeImage,
     colorAndName,
     iBox,
     boxShapes,
+    arrayLength,
     level = 1;
 
 const sGrid = document.getElementById("imagesBox");
@@ -142,6 +144,7 @@ function getRandomInt(maxNumber = shapes.length) {
 function buttonClick(numShapes) {
     clearText();
     clearImages();
+    shapesArray = new Array(0);
     getGridLayout(numShapes);
     getShapeToClick();
     startTimer();
@@ -156,6 +159,8 @@ function getImage(randomInt) {
     console.log(shapeImage);*/
     shapeArray = shapes[randomInt];
     console.log(shapeArray);
+    arrayLength = shapesArray.push(shapeArray);
+    console.log(shapesArray);
     shapeImage = shapeArray.image;
     
     //append the image to the list of images in box
@@ -211,8 +216,22 @@ function clearImages() {
     })
 }
 */
+//Populates the random shapes
+function getShape() {
+    arrayLength = shapesArray.length;
+    getRandomInt(arrayLength);
+    console.log(randomInt);
+    //initial button click called when form opens
+    shapeArray = shapesArray[randomInt];
+    shapeColor = shapeArray.color;
+    shapeName = shapeArray.name;
+    colorAndName = `${shapeColor} ${shapeName}`;
+    console.log(colorAndName);
+    return colorAndName;
+      
+}
 
-function getShapeColor() {
+/*function getShapeColor() {
     //get current shapes from imagesBox. Are they automatically indexed 0, 1, etc?
     //randomly select one of these... maxNumber = # of "a" elements in "imagesBox"
     let imagesBox = document.getElementById("imagesBox");
@@ -260,7 +279,7 @@ function getColorAndName(shapeColor, shapeName) {
     console.log(colorAndName);
     return colorAndName
 }
-
+*/
 
 
 function clearText() {
@@ -271,12 +290,14 @@ function clearText() {
 
 
 function getShapeToClick() {
-    //getShape();
-    getShapeColor();
-    getShapeName();
-    getColorAndName(shapeColor, shapeName);
-    const clickThis = document.getElementById('h3');
-    clickThis.textContent = colorAndName;
+    getShape();
+    //getShapeColor();
+    //getShapeName();
+    //getColorAndName(shapeColor, shapeName);
+    const tText = document.querySelector('h3');
+    tText.textContent = colorAndName;
+    //let clickThis = document.getElementById('h3');
+    //clickThis.textContent = colorAndName;
 }
 
 function startTimer() {
