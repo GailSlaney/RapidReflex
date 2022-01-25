@@ -84,7 +84,10 @@ let randomInt,
     iBox,
     boxShapes,
     arrayLength,
-    level = 1;
+    level = 1,
+    elapsedTime = 0,
+    startTime,
+    timerInterval;
 
 const sGrid = document.getElementById("imagesBox");
 /*let rows = document.getElementsByClassName("gridRow");
@@ -112,6 +115,8 @@ startButton.addEventListener('click', (e) => {
     console.log('actual button click');
     
 })
+
+
 
 //Shape is clicked
 const img = document.querySelector('img');
@@ -306,28 +311,34 @@ function startTimer() {
         elapsedTime = Date.now() - startTime;
         print(timeToString(elapsedTime));
     }, 10);
-    //showButton("PAUSE");
+  //  showButton("PAUSE");
 
 }
+
+function print(txt) {
+    document.getElementById("display").innerHTML = txt;
+}
+
 function pause() {
     clearInterval(timerInterval);
-    showButton("PLAY");
+   // showButton("PLAY");
 }
 
 function reset(){
     clearInterval(timerInterval);
     print("00:00:00:000");
     elapsedTime = 0;
-    showButton("PLAY");
+    //showButton("PLAY");
 }
 
-
+/*
 function showButton(buttonKey) {
     const buttonToShow = buttonKey === "PLAY" ? playButton : pauseButton;
     const buttonToHide = buttonKey === "PLAY" ? pauseButton : playButton;
     buttonToShow.style.display = "block";
     buttonToHide.style.display = "none";
 }
+*/
 
 function timeToString(time) {
     let diffInHrs = time / 3600000;
