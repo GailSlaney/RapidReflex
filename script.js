@@ -110,7 +110,7 @@ startButton.addEventListener('click', (e) => {
     console.log('button click');
     
     //Game begins with 2 images displayed
-    numShapes = 2;
+    numShapes = 8;
     buttonClick(numShapes);
     console.log('actual button click');
     
@@ -141,12 +141,17 @@ function getGridLayout(numShapes) {
         getRandomInt();
         console.log(randomInt);
         if (shapesArray.length > 0) {
-            for (let i = 0; i < shapesArray.length; i++) {
-                if (shapesArray[i][0] === randomInt) {
+            for (let j = 0; j < shapesArray.length; j++) {
+                while (shapesArray[j].id === randomInt) {
                     getRandomInt();
+                    console.log(randomInt);
+                    j=0;
                 }
+                console.log("ourside while");
             } 
+            console.log("ourside for");
         }
+        console.log("ourside if");
         //initial button click called when form opens
         getImage(randomInt);
         console.log(shapeImage);
