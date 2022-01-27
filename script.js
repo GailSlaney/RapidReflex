@@ -96,7 +96,7 @@ let cells = document.getElementsByName("cell");*/
 //let gridCells = document.querySelectorAll('.child');
 //console.log(gridCells);
 
-let numShapes = 2;
+let numShapes = 4;
 console.log(numShapes);
 
 getGridLayout(numShapes);
@@ -142,7 +142,7 @@ function getGridLayout(numShapes) {
         console.log(randomInt);
         if (shapesArray.length > 0) {
             for (let i = 0; i < shapesArray.length; i++) {
-                if (shapesArray[i].shapeArray.id === randomInt) {
+                if (shapesArray[i][0] === randomInt) {
                     getRandomInt();
                 }
             } 
