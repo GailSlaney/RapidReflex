@@ -119,19 +119,34 @@ startButton.addEventListener('click', (e) => {
 
 
 //Shape is clicked
-const img = document.querySelector('img');
-img.addEventListener('click', (e) => {
-    e.preventDefault();
-    console.log('image click');
+let displayedShapes = document.querySelectorAll('.sImgA');
+console.log(displayedShapes);
+
+for (displayedShape of displayedShapes) {
+    displayedShape.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('image click');
+        console.log(randomInt);
+        shapeClick();
+    })
+}
+
+function shapeClick() {
     console.log(randomInt);
-    shapeClick();
-})
+}
 
 //Populates the random shapes
 function getGridLayout(numShapes) {
     for (let i = 0; i < numShapes; i++) {
         getRandomInt();
         console.log(randomInt);
+        if (shapesArray.length > 0) {
+            for (let i = 0; i < shapesArray.length; i++) {
+                if (shapesArray[i].shapeArray.id === randomInt) {
+                    getRandomInt();
+                }
+            } 
+        }
         //initial button click called when form opens
         getImage(randomInt);
         console.log(shapeImage);
@@ -168,6 +183,8 @@ function getImage(randomInt) {
     console.log(shapesArray);
     shapeImage = shapeArray.image;
     
+
+
     //append the image to the list of images in box
     
     let img = document.createElement("img");
