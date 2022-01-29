@@ -38,15 +38,38 @@ a {
 .shapes_timer {
     display: grid;
     grid-auto-flow: column;
-    grid-template-areas: 
+    grid-template-areas:
+        "level  chances" 
         "imagesBox timerGrid"
         "imagesBox timerGrid"
         "imagesBox colAndShapeName"
         "imagesBox startButton";
     justify-items: center;
     grid-template-columns: 3fr 2fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     gap: 5px;
+}
+
+#level {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-self: flex-start;
+    width: auto;
+    height: auto;
+}
+
+#chances {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-self:center;
+    width: auto;
+    height: auto;
 }
 
 #imagesBox {
@@ -61,62 +84,23 @@ a {
     width: auto;
     height: auto;
     border: black solid 2px;
-     /* flex: 1 1 0;
-     flex-grow: 1;
-    flex-shrink: 1;
-   grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-auto-flow: row;
-    gap: 25px;
-    grid-gap: 5px;
-    background-color: white;
-    align-items: center;
-    justify-items: center;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border: 2px solid black;
-    */
 }
 
-/*
-#imagesBox div {
-     
-    flex: 0 1 200px;
-    align-self: center;
-}
-*/
+
 .sImgA {
     flex: 0 1 200px;
     align-self: center;
 }
 
-/*a {
-display: flex;
-flex-shrink: 1;
-flex-wrap: wrap;
-
-}
-
-img {
-    object-fit: contain;
-    object-position: 50% 50%;
-    width: 100%;
-}
-*/
-
 .sImage  {
     object-fit: contain;
     object-position: 50% 50%;
-   /* height: 100%;
-    width: 100%;*/
-    
-    /*flex: auto;*/
+   
 }
 
 
 .timerGrid {
     display: grid;
-    /*grid-template-rows:1fr 1fr;*/
     justify-items:center;
     align-items: flex-start;
     grid-row-gap: 10px;
@@ -205,9 +189,18 @@ button {
     font: Tahoma 30px  bold;
 }
 
+#level {
+    grid-area: level;
+}
+
+#chances {
+    grid-area: chances;
+}
+
 #imagesBox {
     grid-area: imagesBox;
 }
+
 .timerGrid {
     grid-area: timerGrid;
 }

@@ -96,7 +96,7 @@ let cells = document.getElementsByName("cell");*/
 //let gridCells = document.querySelectorAll('.child');
 //console.log(gridCells);
 
-let numShapes = 4;
+let numShapes = 2;
 console.log(numShapes);
 
 getGridLayout(numShapes);
@@ -110,7 +110,7 @@ startButton.addEventListener('click', (e) => {
     console.log('button click');
     
     //Game begins with 2 images displayed
-    numShapes = 8;
+    numShapes = 2;
     buttonClick(numShapes);
     console.log('actual button click');
     
