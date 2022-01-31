@@ -97,6 +97,19 @@ let cells = document.getElementsByName("cell");*/
 //let gridCells = document.querySelectorAll('.child');
 //console.log(gridCells);
 
+fillLevel(level);
+fillChances(chances);
+
+function fillLevel(level){
+    const levelText = document.getElementById('level');
+    levelText.textContent = `Level ${level}`;
+}
+
+function fillChances(chances){
+    const chanceText = document.getElementById('chances');
+    chanceText.textContent = `${chances} Chances Left`;
+}
+
 let numShapes = 2;
 console.log(numShapes);
 
@@ -120,8 +133,8 @@ startButton.addEventListener('click', (e) => {
 
 
 //Shape is clicked
-let displayedShapes = document.querySelectorAll('.sImgA');
-console.log(displayedShapes);
+const displayedShapes = document.querySelectorAll('.sImgA');
+//console.log(displayedShapes);
 
 for (displayedShape of displayedShapes) {
     displayedShape.addEventListener('click', (e) => {
