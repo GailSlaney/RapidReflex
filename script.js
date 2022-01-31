@@ -85,6 +85,7 @@ let randomInt,
     boxShapes,
     arrayLength,
     level = 1,
+    chances = 3,
     elapsedTime = 0,
     startTime,
     timerInterval;
