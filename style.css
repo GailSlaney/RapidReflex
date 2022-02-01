@@ -9,7 +9,7 @@ body    {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
     font-weight: normal;
-    background-image : url(images/background4.png);
+    background-image : url(images/background5.png);
     background-size:cover;
     
 }
@@ -115,8 +115,8 @@ a {
     grid-template-rows: 1fr 1fr 1fr 1fr;
     justify-items: center;
     align-items: center;
-    background-color: darkslategray;
-    color: floralwhite;
+    background-color: rgb(67, 19, 158);
+    color: rgb(244, 240, 255);
     
     height: 150px;
     width: 300px;
