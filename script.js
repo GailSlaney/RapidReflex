@@ -186,7 +186,7 @@ function buttonClick(numShapes) {
     shapesArray = new Array(0);
     getGridLayout(numShapes);
     getShapeToClick();
-    startTimer();
+    //startTimer();
 }
 
 function getImage(randomInt) {
