@@ -106,7 +106,7 @@ const shapes2 = [
     },
     {
         id: 5,
-        image: 'images/greenTriangle.png',
+        image: 'images/orangeOctagon.png',
         name: 'Triangle',
         color: 'Green'
     },
