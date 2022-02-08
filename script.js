@@ -73,6 +73,81 @@ const shapes = [
     }
 ];
 
+const shapes2 = [
+    {
+        id: 0,
+        image: 'images/blueOctagon.png',
+        name: 'Octagon',
+        color: 'Blue'
+    },
+    {
+        id: 1,
+        image: 'images/greenOctagon.png',
+        name: 'Octagon',
+        color: 'Green'
+    },
+    {
+        id: 2,
+        image: 'images/redOctagon.png',
+        name: 'Octagon',
+        color: 'Red'
+    },
+    {
+        id: 3,
+        image: 'images/yellowOctagon.png',
+        name: 'Octagon',
+        color: 'Yellow'
+    },
+    {
+        id: 4,
+        image: 'images/blackOctagon.png',
+        name: 'Octagon',
+        color: 'Black'
+    },
+    {
+        id: 5,
+        image: 'images/greenTriangle.png',
+        name: 'Triangle',
+        color: 'Green'
+    },
+    {
+        id: 6,
+        image: 'images/redTriangle.png',
+        name: 'Triangle',
+        color: 'Red'
+    },
+    {
+        id: 7,
+        image: 'images/yellowTriangle.png',
+        name: 'Triangle',
+        color: 'Yellow'
+    },
+    {
+        id: 8,
+        image: 'images/blueCircle.png',
+        name: 'Circle',
+        color: 'Blue'
+    },
+    {
+        id: 9,
+        image: 'images/greenCircle.png',
+        name: 'Circle',
+        color: 'Green'
+    },
+    {
+        id: 10,
+        image: 'images/redCircle.png',
+        name: 'Circle',
+        color: 'Red'
+    },
+    {
+        id: 11,
+        image: 'images/yellowCircle.png',
+        name: 'Circle',
+        color: 'Yellow'
+    }
+];
+
 //Page initially opens
 let randomInt,
     shapeArray,
