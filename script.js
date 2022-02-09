@@ -76,7 +76,7 @@ const shapes = [
 const shapes2 = [
     {
         id: 0,
-        image: 'images/blueOctagon.png',
+        image: 'images/blueOctagon.jpeg',
         name: 'Octagon',
         color: 'Blue'
     },
@@ -107,37 +107,37 @@ const shapes2 = [
     {
         id: 5,
         image: 'images/orangeOctagon.png',
-        name: 'Triangle',
-        color: 'Green'
+        name: 'Octagon',
+        color: 'Orange'
     },
     {
         id: 6,
-        image: 'images/redTriangle.png',
-        name: 'Triangle',
-        color: 'Red'
+        image: 'images/blackHexagon.jpeg',
+        name: 'Hexagon',
+        color: 'Black'
     },
     {
         id: 7,
-        image: 'images/yellowTriangle.png',
-        name: 'Triangle',
-        color: 'Yellow'
-    },
-    {
-        id: 8,
-        image: 'images/blueCircle.png',
-        name: 'Circle',
+        image: 'images/blueHexagon.png',
+        name: 'Hexagon',
         color: 'Blue'
     },
     {
-        id: 9,
-        image: 'images/greenCircle.png',
-        name: 'Circle',
+        id: 8,
+        image: 'images/greenHexagon.png',
+        name: 'Hexagon',
         color: 'Green'
     },
     {
+        id: 9,
+        image: 'images/orangeHexagon.png',
+        name: 'Hexagon',
+        color: 'Orange'
+    },
+    {
         id: 10,
-        image: 'images/redCircle.png',
-        name: 'Circle',
+        image: 'images/redHexagon.png',
+        name: 'Hexagon',
         color: 'Red'
     },
     {
