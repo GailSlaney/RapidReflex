@@ -161,6 +161,7 @@ let randomInt,
     arrayLength,
     level = 1,
     chances = 3,
+    round = 1,
     elapsedTime = 0,
     startTime,
     timerInterval;
@@ -220,8 +221,9 @@ for (displayedShape of displayedShapes) {
     })
 }
 
-function shapeClick() {
+function shapeClick(level, chances, round) {
     console.log(randomInt);
+
 }
 
 //Populates the random shapes
@@ -405,7 +407,7 @@ function clearText() {
 }
 
 
-function getShapeToClick() {
+function getShapeToClick(level, chances, round) {
     getShape();
     //getShapeColor();
     //getShapeName();
