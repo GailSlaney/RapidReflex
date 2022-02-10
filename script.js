@@ -76,7 +76,7 @@ const shapes = [
 const shapes2 = [
     {
         id: 0,
-        image: 'images/blueOctagon.jpeg',
+        image: 'images/blueOctagon.png',
         name: 'Octagon',
         color: 'Blue'
     },
@@ -112,7 +112,7 @@ const shapes2 = [
     },
     {
         id: 6,
-        image: 'images/blackHexagon.jpeg',
+        image: 'images/blackHexagon.png',
         name: 'Hexagon',
         color: 'Black'
     },
@@ -142,8 +142,8 @@ const shapes2 = [
     },
     {
         id: 11,
-        image: 'images/yellowCircle.png',
-        name: 'Circle',
+        image: 'images/yellowPentagon.png',
+        name: 'Pentagon',
         color: 'Yellow'
     }
 ];
@@ -210,9 +210,17 @@ startButton.addEventListener('click', (e) => {
 
 //Shape is clicked
 const displayedShapes = document.querySelectorAll('.sImgA');
+displayedShapes.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log('shape click');
+    console.log(randomInt);
+    shapeClick();
+})
+//const displayedShapes = document.querySelectorAll('.sImgA');
 //console.log(displayedShapes);
 
-for (displayedShape of displayedShapes) {
+/*for (displayedShape of displayedShapes) 
+if {
     displayedShape.addEventListener('click', (e) => {
         e.preventDefault();
         console.log('image click');
@@ -220,6 +228,7 @@ for (displayedShape of displayedShapes) {
         shapeClick();
     })
 }
+*/
 
 function shapeClick(level, chances, round) {
     console.log(randomInt);
