@@ -230,8 +230,12 @@ if {
 }
 */
 
-function shapeClick(level, chances, round) {
+function shapeClick() {
     console.log(randomInt);
+    if (shapesArray[randomInt].image = img.src) {
+        round = round + 1;
+        //set 
+    }
 
 }
 
