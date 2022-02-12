@@ -209,7 +209,7 @@ startButton.addEventListener('click', (e) => {
 
 
 //Shape is clicked
-const displayedShapes = document.querySelectorAll('.sImgA');
+const displayedShapes = document.querySelector('.sImgA');
 displayedShapes.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('shape click');
@@ -232,7 +232,10 @@ if {
 
 function shapeClick() {
     console.log(randomInt);
-    if (shapesArray[randomInt].image = img.src) {
+    $("img").click(function() {
+        let shapeSrc = $(this).attr("src");
+    });
+    if (shapeArray.image === shapeSrc) {
         round = round + 1;
         //set 
     }
