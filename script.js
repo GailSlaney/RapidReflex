@@ -209,13 +209,23 @@ startButton.addEventListener('click', (e) => {
 
 
 //Shape is clicked
-const displayedShapes = document.querySelector('.sImgA');
-displayedShapes.addEventListener('click', (e) => {
+//const displayedShapes = document.querySelector('.sImgA');
+const displayedShapes = document.getElementsByClassName('sImgA');
+let getClickedShape = function() {
+    const imgSrc = this.getAttribute("src");
+    shapeClick();
+}
+for (let i = 0; i < displayedShapes.length; i++) {
+    displayedShapes[i].addEventListener('click', getClickedShape, false);
+}
+
+/*displayedShapes.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('shape click');
     console.log(randomInt);
     shapeClick();
 })
+*/
 //const displayedShapes = document.querySelectorAll('.sImgA');
 //console.log(displayedShapes);
 
@@ -232,13 +242,14 @@ if {
 
 function shapeClick() {
     console.log(randomInt);
-    $("img").click(function() {
-        let shapeSrc = $(this).attr("src");
-    });
-    if (shapeArray.image === shapeSrc) {
-        round = round + 1;
+    console.log("shapeClick Function");
+    //document.querySelector('.sImgA').click(function() {
+    //    let shapeSrc = .attr("src");
+    //});
+    //if (shapeArray.image === shapeSrc) {
+    //    round = round + 1;
         //set 
-    }
+    //}
 
 }
 
