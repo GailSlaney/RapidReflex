@@ -194,7 +194,7 @@ getGridLayout(numShapes);
 
 
 //Let's Play button is clicked
-const startButton = document.querySelector('.startButton');
+const startButton = document.getElementById('startButton');
 startButton.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('button click');
@@ -209,15 +209,24 @@ startButton.addEventListener('click', (e) => {
 
 
 //Shape is clicked
+
+const displayedShapes = document.getElementById("imagesBox").querySelectorAll("img");
+const n = displayedShapes.length;
+for (let i = 0; i<n; i++) {
+    displayedShapes[1].addEventListener('click', (e) => {
+        e.preventDefault();
+        shapeClick();
+    })
+}
 //const box = document.getElementById("imagesBox");
-sGrid.onclick = function(event) {
+//sGrid.onclick = function(event) {
    // if (event.target.nodeName != 'A') return;
   
     //let href = event.target.getAttribute('href');
-    shapeClick();
+    //shapeClick();
 
-    return false;
-};
+    //return false;
+//};
 /*
 window.onload = function(){
     document.getElementById('imagesBox').querySelectorAll('img').buttonClick = function(){
