@@ -210,7 +210,14 @@ startButton.addEventListener('click', (e) => {
 
 //Shape is clicked
 
-const displayedShapes = document.getElementById("imagesBox").querySelectorAll("img");
+const displayedShapes = document.getElementById("imagesBox").addEventListener("click", function(e) {
+    const tgt = e.target;
+    if (tgt.classList.contains("sImage")) {
+        console.log(tgt.closest("div").id)
+        shapeClick();
+    }
+})
+/*
 const n = displayedShapes.length;
 for (let i = 0; i<n; i++) {
     displayedShapes[1].addEventListener('click', (e) => {
@@ -218,6 +225,7 @@ for (let i = 0; i<n; i++) {
         shapeClick();
     })
 }
+*/
 //const box = document.getElementById("imagesBox");
 //sGrid.onclick = function(event) {
    // if (event.target.nodeName != 'A') return;
@@ -366,22 +374,22 @@ function getImage(randomInt) {
     //append the image to the list of images in box
     
     let img = document.createElement("img");
-    let sButton = document.createElement("button");
+    //let sButton = document.createElement("button");
 //    let a = document.createElement("a");
     let imagesBox = document.getElementById("imagesBox");
     //let div = document.createElement("div");
     //div.setAttribute("class", "sImgDiv");
     img.src = shapeImage;
     img.setAttribute("class", "sImage");
-    //img.setAttribute("cursor", "pointer");
     
     //a.href = "";
-    sButton.setAttribute("class", "sImgA");
+    /*sButton.setAttribute("class", "sImgA");
     sButton.setAttribute("cursor", "pointer");
     sButton.appendChild(img);
+    */
     //a.setAttribute("class", "sImgA");
     //a.appendChild(img);
-    imagesBox.appendChild(sButton);
+    imagesBox.appendChild(img);
     //div.appendChild(a);
     //document.getElementById("imagesBox").appendChild(a);
 }

@@ -98,6 +98,7 @@ a {
 .sImage  {
     object-fit: contain;
     object-position: 50% 50%;
+    cursor: pointer;
    
 }
 
