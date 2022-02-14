@@ -209,15 +209,21 @@ startButton.addEventListener('click', (e) => {
 
 
 //Shape is clicked
-//const displayedShapes = document.querySelector('.sImgA');
-const displayedShapes = document.getElementsByClassName('sImgA');
-let getClickedShape = function() {
-    const imgSrc = this.getAttribute("src");
+
+const displayedShapes = document.getElementById('imagesBox').querySelectorAll('img');
+for (let img of displayedShapes) {
+    console.log(img.src);
+    img.addEventListener('click', shapeClick, false);
+}
+console.log(displayedShapes);
+/*let getClickedShape = function() {
+    const imgSrc = this.img.src;
     shapeClick();
 }
 for (let i = 0; i < displayedShapes.length; i++) {
     displayedShapes[i].addEventListener('click', getClickedShape, false);
 }
+*/
 
 /*displayedShapes.addEventListener('click', (e) => {
     e.preventDefault();
