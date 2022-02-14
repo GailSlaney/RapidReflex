@@ -209,13 +209,53 @@ startButton.addEventListener('click', (e) => {
 
 
 //Shape is clicked
+//const box = document.getElementById("imagesBox");
+sGrid.onclick = function(event) {
+   // if (event.target.nodeName != 'A') return;
+  
+    //let href = event.target.getAttribute('href');
+    shapeClick();
 
+    return false;
+};
+/*
+window.onload = function(){
+    document.getElementById('imagesBox').querySelectorAll('img').buttonClick = function(){
+        console.log('clicked shape');
+        shapeClick();
+    };
+};
+*/
+/*
 const displayedShapes = document.getElementById('imagesBox').querySelectorAll('img');
+displayedShapes.mousedown = shapeClick();
+*/
+/*
+const n = displayedShapes.length; //displays number of displayed images
+let makeHandler = function(num) { //outer function
+    return function() { //inner function
+        console.log("This is shape number" + num);
+    };
+};
+for (let i = 0; i<n; i++) {
+    displayedShapes[i].onclick = makeHandler(i+1);
+}
+*/
+/*
 for (let img of displayedShapes) {
     console.log(img.src);
-    img.addEventListener('click', shapeClick, false);
+    img.onclick = (e) => {
+        e.preventDefault();
+        shapeClick();
+    }
+    
+    //img.addEventListener('click', (e) => {
+    //    e.preventDefault();
+    //    shapeClick();
+    //})
 }
-console.log(displayedShapes);
+*/
+//console.log(displayedShapes);
 /*let getClickedShape = function() {
     const imgSrc = this.img.src;
     shapeClick();
@@ -271,11 +311,11 @@ function getGridLayout(numShapes) {
                     console.log(randomInt);
                     j=0;
                 }
-                console.log("ourside while");
+                console.log("outside while");
             } 
-            console.log("ourside for");
+            console.log("outside for");
         }
-        console.log("ourside if");
+        console.log("outside if");
         //initial button click called when form opens
         getImage(randomInt);
         console.log(shapeImage);
@@ -317,17 +357,22 @@ function getImage(randomInt) {
     //append the image to the list of images in box
     
     let img = document.createElement("img");
-    let a = document.createElement("a");
+    let sButton = document.createElement("button");
+//    let a = document.createElement("a");
     let imagesBox = document.getElementById("imagesBox");
     //let div = document.createElement("div");
     //div.setAttribute("class", "sImgDiv");
     img.src = shapeImage;
     img.setAttribute("class", "sImage");
+    //img.setAttribute("cursor", "pointer");
     
-    a.href = "";
-    a.setAttribute("class", "sImgA");
-    a.appendChild(img);
-    imagesBox.appendChild(a);
+    //a.href = "";
+    sButton.setAttribute("class", "sImgA");
+    sButton.setAttribute("cursor", "pointer");
+    sButton.appendChild(img);
+    //a.setAttribute("class", "sImgA");
+    //a.appendChild(img);
+    imagesBox.appendChild(sButton);
     //div.appendChild(a);
     //document.getElementById("imagesBox").appendChild(a);
 }
@@ -336,7 +381,8 @@ function getImage(randomInt) {
 function clearImages() {
     let sImgA = document.getElementsByClassName("sImgA");
     let imagesBox = document.getElementById("imagesBox");
-    let a = document.querySelector("a");
+    let sButton = document.querySelector("button");
+    //let a = document.querySelector("a");
     let childElementCount = imagesBox.childElementCount;
     console.log(imagesBox.childElementCount);
     console.log(imagesBox.childNodes);
