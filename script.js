@@ -164,7 +164,8 @@ let randomInt,
     round = 1,
     elapsedTime = 0,
     startTime,
-    timerInterval;
+    timerInterval,
+    maxNumber = shapes.length;
 
 const sGrid = document.getElementById("imagesBox");
 /*let rows = document.getElementsByClassName("gridRow");
@@ -213,99 +214,53 @@ startButton.addEventListener('click', (e) => {
 const displayedShapes = document.getElementById("imagesBox").addEventListener("click", function(e) {
     const tgt = e.target;
     if (tgt.classList.contains("sImage")) {
-        console.log(tgt.closest("div").id)
-        shapeClick();
+        console.log(tgt);
+        console.log(shapeArray.image);
+        if (tgt.attributes.src.value === shapeArray.image) {
+            console.log('true');
+            goodChoice();
+        }
+        else {
+            console.log('not a match');
+            wrongChoice();
+        }
     }
 })
-/*
-const n = displayedShapes.length;
-for (let i = 0; i<n; i++) {
-    displayedShapes[1].addEventListener('click', (e) => {
-        e.preventDefault();
-        shapeClick();
-    })
-}
-*/
-//const box = document.getElementById("imagesBox");
-//sGrid.onclick = function(event) {
-   // if (event.target.nodeName != 'A') return;
-  
-    //let href = event.target.getAttribute('href');
-    //shapeClick();
 
-    //return false;
-//};
-/*
-window.onload = function(){
-    document.getElementById('imagesBox').querySelectorAll('img').buttonClick = function(){
-        console.log('clicked shape');
-        shapeClick();
-    };
-};
-*/
-/*
-const displayedShapes = document.getElementById('imagesBox').querySelectorAll('img');
-displayedShapes.mousedown = shapeClick();
-*/
-/*
-const n = displayedShapes.length; //displays number of displayed images
-let makeHandler = function(num) { //outer function
-    return function() { //inner function
-        console.log("This is shape number" + num);
-    };
-};
-for (let i = 0; i<n; i++) {
-    displayedShapes[i].onclick = makeHandler(i+1);
-}
-*/
-/*
-for (let img of displayedShapes) {
-    console.log(img.src);
-    img.onclick = (e) => {
-        e.preventDefault();
-        shapeClick();
+
+function goodChoice() {
+    round ++;
+    switch (round) 
+    {
+        case 2: case 3: case 4:
+            numShapes = 2;
+            maxNumber = shapes.length;
+            level = 1;
+            break;
+        case 5: case 6: case 7: case 8:
+            numShapes = 4;
+            maxNumber = shapes.length;
+            level = 2;
+            break; 
+        case 9: case 10: case 11:  case 12:
+            numShapes = 4;
+            maxNumber = shapes2.length;
+            level = 3
+            break;
+        case 13: case 14: case 15:  case 16:
+            numShapes = 4;
+            maxNumber = shapes2.length;
+            level = 4;
+            //make special case for get coding
+            break;
+        default:
+            numShapes = 2;
     }
-    
-    //img.addEventListener('click', (e) => {
-    //    e.preventDefault();
-    //    shapeClick();
-    //})
-}
-*/
-//console.log(displayedShapes);
-/*let getClickedShape = function() {
-    const imgSrc = this.img.src;
-    shapeClick();
-}
-for (let i = 0; i < displayedShapes.length; i++) {
-    displayedShapes[i].addEventListener('click', getClickedShape, false);
-}
-*/
 
-/*displayedShapes.addEventListener('click', (e) => {
-    e.preventDefault();
-    console.log('shape click');
-    console.log(randomInt);
-    shapeClick();
-})
-*/
-//const displayedShapes = document.querySelectorAll('.sImgA');
-//console.log(displayedShapes);
+    buttonClick(numShapes);
 
-/*for (displayedShape of displayedShapes) 
-if {
-    displayedShape.addEventListener('click', (e) => {
-        e.preventDefault();
-        console.log('image click');
-        console.log(randomInt);
-        shapeClick();
-    })
-}
-*/
-
-function shapeClick() {
-    console.log(randomInt);
-    console.log("shapeClick Function");
+    console.log("goodChoice Function");
+    //if (shapesArray[randomInt].clicked)
     //document.querySelector('.sImgA').click(function() {
     //    let shapeSrc = .attr("src");
     //});
@@ -324,7 +279,7 @@ function getGridLayout(numShapes) {
         if (shapesArray.length > 0) {
             for (let j = 0; j < shapesArray.length; j++) {
                 while (shapesArray[j].id === randomInt) {
-                    getRandomInt();
+                    getRandomInt(maxNumber);
                     console.log(randomInt);
                     j=0;
                 }
@@ -570,27 +525,4 @@ function timeToString(time) {
 }
 
 
-/*
-//creates rows
-function makeRows(totRows) {
-    for (i = 0; i < totRows; i++) {
-        //let row = document.createElement("a");
-        let cell = level_Grid.createElement("a");
 
-
-        level_Grid.appendChild(rows).className = "gridRow";
-    };
-};
-*/
-
-/*
-//creates columns
-function makeColumns(totRows) {
-    for (i = 0; i < rows.length; i++) {
-        for (j = 0; j < totRows; j++) {
-            let newCell = document.createElement("div");
-            rows[j].appendChild(newCell).className = "cell";
-        };
-    };
-};
-*/
