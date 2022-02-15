@@ -168,23 +168,28 @@ let randomInt,
     maxNumber = shapes.length;
 
 const sGrid = document.getElementById("imagesBox");
+const chanceText = document.getElementById('chances');
+
 /*let rows = document.getElementsByClassName("gridRow");
 let cells = document.getElementsByName("cell");*/
 
 //let gridCells = document.querySelectorAll('.child');
 //console.log(gridCells);
 
-fillLevel(level);
-fillChances(chances);
+fillLevel();
+fillChances();
 
-function fillLevel(level){
+function fillLevel(){
     const levelText = document.getElementById('level');
     levelText.textContent = `Level ${level}`;
 }
 
-function fillChances(chances){
-    const chanceText = document.getElementById('chances');
+function fillChances(bgdColor){
+    //const chanceText = document.getElementById('chances');
     chanceText.textContent = `${chances} Chances Left`;
+    chanceText.background-color = bgdColor;
+    console.log(chanceText);
+
 }
 
 let numShapes = 2;
@@ -227,6 +232,24 @@ const displayedShapes = document.getElementById("imagesBox").addEventListener("c
     }
 })
 
+function wrongChoice() {
+    chances --;
+    switch (chances)
+    {
+        case 2:
+            bgdColor = yellow;
+            break;
+
+        case 1:
+            bgdColor = orange;
+            break;
+        
+            case 0:
+                bgdColor = red;
+                break;
+    }
+            fillChances(bgdColor);
+}
 
 function goodChoice() {
     round ++;
@@ -258,16 +281,8 @@ function goodChoice() {
     }
 
     buttonClick(numShapes);
-
     console.log("goodChoice Function");
-    //if (shapesArray[randomInt].clicked)
-    //document.querySelector('.sImgA').click(function() {
-    //    let shapeSrc = .attr("src");
-    //});
-    //if (shapeArray.image === shapeSrc) {
-    //    round = round + 1;
-        //set 
-    //}
+    
 
 }
 
@@ -306,6 +321,8 @@ function buttonClick(numShapes) {
     clearText();
     clearImages();
     shapesArray = new Array(0);
+    fillLevel();
+    fillChances();
     getGridLayout(numShapes);
     getShapeToClick();
     //startTimer();
@@ -329,24 +346,10 @@ function getImage(randomInt) {
     //append the image to the list of images in box
     
     let img = document.createElement("img");
-    //let sButton = document.createElement("button");
-//    let a = document.createElement("a");
     let imagesBox = document.getElementById("imagesBox");
-    //let div = document.createElement("div");
-    //div.setAttribute("class", "sImgDiv");
     img.src = shapeImage;
     img.setAttribute("class", "sImage");
-    
-    //a.href = "";
-    /*sButton.setAttribute("class", "sImgA");
-    sButton.setAttribute("cursor", "pointer");
-    sButton.appendChild(img);
-    */
-    //a.setAttribute("class", "sImgA");
-    //a.appendChild(img);
     imagesBox.appendChild(img);
-    //div.appendChild(a);
-    //document.getElementById("imagesBox").appendChild(a);
 }
 
 //Remove images from box
@@ -354,7 +357,6 @@ function clearImages() {
     let sImgA = document.getElementsByClassName("sImgA");
     let imagesBox = document.getElementById("imagesBox");
     let sButton = document.querySelector("button");
-    //let a = document.querySelector("a");
     let childElementCount = imagesBox.childElementCount;
     console.log(imagesBox.childElementCount);
     console.log(imagesBox.childNodes);
@@ -368,23 +370,7 @@ function clearImages() {
    
 }
 
-/*function getShape() {
-    //get current shapes from imagesBox. Are they automatically indexed 0, 1, etc?
-    //randomly select one of these... maxNumber = # of "a" elements in "imagesBox"
-    iBox = document.getElementById("imagesBox");
-    numShapes = iBox.getElementsByTagName("img").length;
-    //maxNumber= document.getElementsByTagName("img").length;
-    getRandomInt(numShapes);
-    console.log(randomInt);
-    //associate randomInt with img.src ... shapes.image = img.src
-    randomImage=iBox.img(randomInt);
-    shapeName = shapes.filter(function(shape){
-        return shape.image === randomImage;
-    }).map(function(shape){
-        return shape.name;
-    })
-}
-*/
+
 //Populates the random shapes
 function getShape() {
     arrayLength = shapesArray.length;
@@ -400,17 +386,8 @@ function getShape() {
       
 }
 
-/*function getShapeColor() {
-    //get current shapes from imagesBox. Are they automatically indexed 0, 1, etc?
-    //randomly select one of these... maxNumber = # of "a" elements in "imagesBox"
-    let imagesBox = document.getElementById("imagesBox");
-    let maxNumber= imagesBox.childElementCount;
-    let children = imagesBox.children;
-    getRandomInt(maxNumber);
-    //associate randomInt with img.src ... shapes.image = img.src
-    let selShape = children[randomInt];
-    console.log(selShape);
-    
+/*
+
     randomImage=img.src;
     shapeColor = shapes.filter(function(shape){
         return shape.image === randomImage;
@@ -418,21 +395,7 @@ function getShape() {
         return shape.color;
     })
     console.log(shapeColor);
-}
 
-function getShapeName() {
-    //get current shapes from imagesBox. Are they automatically indexed 0, 1, etc?
-    //randomly select one of these... maxNumber = # of "a" elements in "imagesBox"
-    //iBox = document.getElementById("imagesBox");
-    //numShapes = iBox.getElementsByTagName("img").length;
-    //maxNumber= document.getElementsByTagName("img").length;
-    let imagesBox = document.getElementById("imagesBox");
-    let maxNumber= imagesBox.childElementCount;
-    let children = imagesBox.children;
-    getRandomInt(maxNumber);
-    //associate randomInt with img.src ... shapes.image = img.src
-    let selShape = children[randomInt];
-    console.log(selShape);
     
     randomImage=img.src;
     shapeName = shapes.filter(function(shape){
@@ -441,13 +404,6 @@ function getShapeName() {
         return shape.name;
     })
     console.log(shapeName);
-}
-
-function getColorAndName(shapeColor, shapeName) {
-    colorAndName = `${shapeColor} ${shapeName}`;
-    console.log(colorAndName);
-    return colorAndName
-}
 */
 
 
