@@ -165,7 +165,8 @@ let randomInt,
     elapsedTime = 0,
     startTime,
     timerInterval,
-    maxNumber = shapes.length;
+    maxNumber = shapes.length,
+    bgdColor = "ivory";
 
 const sGrid = document.getElementById("imagesBox");
 const chanceText = document.getElementById('chances');
@@ -177,7 +178,7 @@ let cells = document.getElementsByName("cell");*/
 //console.log(gridCells);
 
 fillLevel();
-fillChances();
+fillChances(bgdColor);
 
 function fillLevel(){
     const levelText = document.getElementById('level');
@@ -187,7 +188,7 @@ function fillLevel(){
 function fillChances(bgdColor){
     //const chanceText = document.getElementById('chances');
     chanceText.textContent = `${chances} Chances Left`;
-    chanceText.background-color = bgdColor;
+    chanceText.style.backgroundColor = bgdColor;
     console.log(chanceText);
 
 }
@@ -237,15 +238,15 @@ function wrongChoice() {
     switch (chances)
     {
         case 2:
-            bgdColor = yellow;
+            bgdColor = "yellow";
             break;
 
         case 1:
-            bgdColor = orange;
+            bgdColor = "orange";
             break;
         
             case 0:
-                bgdColor = red;
+                bgdColor = "red";
                 break;
     }
             fillChances(bgdColor);
