@@ -201,7 +201,9 @@ startButton.addEventListener('click', (e) => {
     level = 1;
     chances = 3;
     round = 1;
-    gdColor = 'ivory'
+    bgdColor = 'ivory';
+    resetTimer();
+    startTimer();
     newRound();
     console.log('actual button click');
     
@@ -228,9 +230,16 @@ const displayedShapes = document.getElementById("imagesBox").addEventListener("c
 })
 
 function updateChances() {
-    chances --;
+    if (chances > 0) {
+        chances --;
+    }
     switch (chances)
     {
+        /*case 3:
+            bgdColor = "ivory";
+            updateRound();
+            break;
+            */
         case 2:
             bgdColor = "yellow";
             updateRound();
@@ -241,10 +250,10 @@ function updateChances() {
             updateRound();
             break;
         
-            case 0:
-                bgdColor = "red";
-                gameOver();
-                break;
+        case 0:
+            bgdColor = "red";
+            gameOver();
+            break;
     }
             fillChances();
 }
@@ -253,6 +262,14 @@ function updateRound() {
     round ++;
     switch (round) 
     {
+        /*case 1:   
+            bgdColor = "ivory";         
+            numShapes = 2;
+            maxNumber = shapes.length;
+            level = 1;
+            resetTimer();
+            break;   
+            */     
         case 2: case 3: case 4:
             numShapes = 2;
             maxNumber = shapes.length;
@@ -285,6 +302,7 @@ function updateRound() {
 }
 
 function gameOver() {
+    stopTimer();
     /*const endGame = document.getElementById("endGame");
     const loseMessage = document.getElementById("loseMessage");
     const winMessage = document.getElementById("winMessage");
@@ -457,12 +475,12 @@ function print(txt) {
     document.getElementById("display").innerHTML = txt;
 }
 
-function pause() {
+function stopTimer() {
     clearInterval(timerInterval);
    // showButton("PLAY");
 }
 
-function reset(){
+function resetTimer(){
     clearInterval(timerInterval);
     print("00:00:00:000");
     elapsedTime = 0;
