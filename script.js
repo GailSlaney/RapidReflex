@@ -150,7 +150,7 @@ const shapes2 = [
 
 //Page initially opens
 let randomInt,
-    shapeArray,
+    shapeArray = new Array(0),
     shapesArray = new Array(0),
     shapeColor,
     shapeName,
@@ -243,6 +243,7 @@ function updateChances() {
         
             case 0:
                 bgdColor = "red";
+                gameOver();
                 break;
     }
             fillChances();
@@ -283,6 +284,15 @@ function updateRound() {
 
 }
 
+function gameOver() {
+    /*const endGame = document.getElementById("endGame");
+    const loseMessage = document.getElementById("loseMessage");
+    const winMessage = document.getElementById("winMessage");
+    endGame.style.display = "block";
+    winMessage.style.display = "none";
+    */
+}
+
 //Populates the random shapes
 function getGridLayout() {
     for (let i = 0; i < numShapes; i++) {
@@ -308,7 +318,7 @@ function getGridLayout() {
 }
 
 //getRandomInt function determines which shapes and colors to display
-function getRandomInt(maxNumber = shapes.length) {
+function getRandomInt(maxNumber) {
     randomInt = Math.floor(Math.random() * maxNumber);
     return randomInt;
 }
@@ -332,7 +342,18 @@ function getImage(randomInt) {
         return shape.image;
     });
     console.log(shapeImage);*/
-    shapeArray = shapes[randomInt];
+    switch (level)
+    {
+        case 1: case 2:
+            shapeArray = shapes[randomInt];
+            break;
+        case 3:
+            shapeArray = shapes2[randomInt];
+            break;
+        case 4:
+            //shapeArray = special for Coding Peeps
+            break;
+    }
     console.log(shapeArray);
     arrayLength = shapesArray.push(shapeArray);
     console.log(shapesArray);
