@@ -266,7 +266,7 @@ function updateRound() {
         case 9: case 10: case 11:  case 12:
             numShapes = 4;
             maxNumber = shapes2.length;
-            level = 3
+            level = 3;
             break;
         case 13: case 14: case 15:  case 16:
             numShapes = 4;
@@ -296,7 +296,7 @@ function gameOver() {
 //Populates the random shapes
 function getGridLayout() {
     for (let i = 0; i < numShapes; i++) {
-        getRandomInt();
+        getRandomInt(maxNumber);
         console.log(randomInt);
         if (shapesArray.length > 0) {
             for (let j = 0; j < shapesArray.length; j++) {
