@@ -214,7 +214,8 @@ startButton.addEventListener('click', (e) => {
 //Shape is clicked
 
 const displayedShapes = document.getElementById("imagesBox");
-if (chances === 0) {
+/*
+if (chances == 0) {
     displayedShapes.removeEventListener("click", function(e){
         const tgt = e.target;
         if (tgt.classList.contains("sImage")) {
@@ -231,22 +232,32 @@ if (chances === 0) {
         }
 })
 } else {
+    */
     displayedShapes.addEventListener("click", function(e) {
     const tgt = e.target;
     if (tgt.classList.contains("sImage")) {
         console.log(tgt);
         console.log(shapeArray.image);
-        if (tgt.attributes.src.value === shapeArray.image) {
-            console.log('true');
-            updateRound();
-        }
-        else {
-            console.log('not a match');
-            updateChances();
+        if (chances > 0 && elapsedTime > 0)    {
+            if (tgt.attributes.src.value === shapeArray.image) {
+                console.log('true');
+                updateRound();
+            }
+            else {
+                console.log('not a match');
+                updateChances();
+            }
         }
     }
 })
+/*
+if (chances === 0) {
+    displayedShapes.removeEventListener("click", function(e) {
+
+    })
 }
+*/
+
 
 function updateChances() {
     if (chances > 0) {
@@ -440,26 +451,6 @@ function getShape() {
     return colorAndName;
       
 }
-
-/*
-
-    randomImage=img.src;
-    shapeColor = shapes.filter(function(shape){
-        return shape.image === randomImage;
-    }).map(function(shape){
-        return shape.color;
-    })
-    console.log(shapeColor);
-
-    
-    randomImage=img.src;
-    shapeName = shapes.filter(function(shape){
-        return shape.image === randomImage;
-    }).map(function(shape){
-        return shape.name;
-    })
-    console.log(shapeName);
-*/
 
 
 function clearText() {
