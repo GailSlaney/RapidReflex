@@ -213,7 +213,25 @@ startButton.addEventListener('click', (e) => {
 
 //Shape is clicked
 
-const displayedShapes = document.getElementById("imagesBox").addEventListener("click", function(e) {
+const displayedShapes = document.getElementById("imagesBox");
+if (chances === 0) {
+    displayedShapes.removeEventListener("click", function(e){
+        const tgt = e.target;
+        if (tgt.classList.contains("sImage")) {
+            console.log(tgt);
+            console.log(shapeArray.image);
+            if (tgt.attributes.src.value === shapeArray.image) {
+                console.log('true');
+                updateRound();
+            }
+            else {
+                console.log('not a match');
+                updateChances();
+            }
+        }
+})
+} else {
+    displayedShapes.addEventListener("click", function(e) {
     const tgt = e.target;
     if (tgt.classList.contains("sImage")) {
         console.log(tgt);
@@ -228,6 +246,7 @@ const displayedShapes = document.getElementById("imagesBox").addEventListener("c
         }
     }
 })
+}
 
 function updateChances() {
     if (chances > 0) {
