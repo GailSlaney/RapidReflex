@@ -166,37 +166,27 @@ let randomInt,
     startTime,
     timerInterval,
     maxNumber = shapes.length,
-    bgdColor = "ivory";
+    bgdColor = 'ivory',
+    numShapes = 2;
 
-const sGrid = document.getElementById("imagesBox");
+const sGrid = document.getElementById('imagesBox');
 const chanceText = document.getElementById('chances');
-
-/*let rows = document.getElementsByClassName("gridRow");
-let cells = document.getElementsByName("cell");*/
-
-//let gridCells = document.querySelectorAll('.child');
-//console.log(gridCells);
-
-fillLevel();
-fillChances(bgdColor);
 
 function fillLevel(){
     const levelText = document.getElementById('level');
     levelText.textContent = `Level ${level}`;
 }
 
-function fillChances(bgdColor){
+function fillChances(){
     //const chanceText = document.getElementById('chances');
     chanceText.textContent = `${chances} Chances Left`;
     chanceText.style.backgroundColor = bgdColor;
     console.log(chanceText);
-
 }
 
-let numShapes = 2;
-console.log(numShapes);
-
-getGridLayout(numShapes);
+fillLevel();
+fillChances();
+getGridLayout();
 //console.log(layout);
 
 
@@ -208,7 +198,11 @@ startButton.addEventListener('click', (e) => {
     
     //Game begins with 2 images displayed
     numShapes = 2;
-    buttonClick(numShapes);
+    level = 1;
+    chances = 3;
+    round = 1;
+    gdColor = 'ivory'
+    newRound();
     console.log('actual button click');
     
 })
@@ -224,35 +218,37 @@ const displayedShapes = document.getElementById("imagesBox").addEventListener("c
         console.log(shapeArray.image);
         if (tgt.attributes.src.value === shapeArray.image) {
             console.log('true');
-            goodChoice();
+            updateRound();
         }
         else {
             console.log('not a match');
-            wrongChoice();
+            updateChances();
         }
     }
 })
 
-function wrongChoice() {
+function updateChances() {
     chances --;
     switch (chances)
     {
         case 2:
             bgdColor = "yellow";
+            updateRound();
             break;
 
         case 1:
             bgdColor = "orange";
+            updateRound();
             break;
         
             case 0:
                 bgdColor = "red";
                 break;
     }
-            fillChances(bgdColor);
+            fillChances();
 }
 
-function goodChoice() {
+function updateRound() {
     round ++;
     switch (round) 
     {
@@ -281,14 +277,14 @@ function goodChoice() {
             numShapes = 2;
     }
 
-    buttonClick(numShapes);
-    console.log("goodChoice Function");
+    newRound();
+    console.log("updateRound Function");
     
 
 }
 
 //Populates the random shapes
-function getGridLayout(numShapes) {
+function getGridLayout() {
     for (let i = 0; i < numShapes; i++) {
         getRandomInt();
         console.log(randomInt);
@@ -318,13 +314,13 @@ function getRandomInt(maxNumber = shapes.length) {
 }
 
 
-function buttonClick(numShapes) {
+function newRound() {
     clearText();
     clearImages();
     shapesArray = new Array(0);
     fillLevel();
     fillChances();
-    getGridLayout(numShapes);
+    getGridLayout();
     getShapeToClick();
     //startTimer();
 }

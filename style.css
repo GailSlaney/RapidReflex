@@ -59,6 +59,7 @@ a {
     display: flex;
     flex-direction: row;
     justify-self:center;
+    align-self: center;
     width: auto;
     height: auto;
 }
@@ -70,6 +71,7 @@ a {
     display: flex;
     flex-direction: row;
     justify-self:center;
+    align-self: center;
     width: auto;
     height: auto;
     background-color: ivory;
@@ -152,6 +154,10 @@ button {
     border: none;
     margin: 0;
     outline: none;
+}
+
+#endGame {
+    display: none;
 }
 
 #playButton {
