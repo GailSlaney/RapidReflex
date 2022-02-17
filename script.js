@@ -361,10 +361,10 @@ function updateRound() {
         default:
             winner();
     }
-
+    if (round < 17) {
     newRound();
     console.log("updateRound Function");
-    
+    }
 
 }
 
