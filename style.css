@@ -166,14 +166,6 @@ button {
     display: none;
 }
 
-#playButton {
-    display: none;
-}
-
-#pauseButton {
-    display: block;
-}
-
 #colAndShapeName {
     /*width: 90%;*/
     border-radius: 5px;

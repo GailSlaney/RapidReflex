@@ -148,6 +148,81 @@ const shapes2 = [
     }
 ];
 
+const shapes3 = [
+    {
+        id: 0,
+        image: 'images/logicalOR.png',
+        name: 'OR',
+        color: 'Logical'
+    },
+    {
+        id: 1,
+        image: 'images/logicalAND.png',
+        name: 'AND',
+        color: 'Logical'
+    },
+    {
+        id: 2,
+        image: 'images/logicalNOT.png',
+        name: 'NOT',
+        color: 'Logical'
+    },
+    {
+        id: 3,
+        image: 'images/cssID.png',
+        name: 'ID',
+        color: 'CSS'
+    },
+    {
+        id: 4,
+        image: 'images/HTMLComment.png',
+        name: 'Comment',
+        color: 'HTML'
+    },
+    {
+        id: 5,
+        image: 'images/jsComment.png',
+        name: 'Comment',
+        color: 'javascript'
+    },
+    {
+        id: 6,
+        image: 'images/pinkNonagon.png',
+        name: 'Nonagon',
+        color: 'Pink'
+    },
+    {
+        id: 7,
+        image: 'images/redNonagon.png',
+        name: 'Nonagon',
+        color: 'Red'
+    },
+    {
+        id: 8,
+        image: 'images/pinkDecagon.png',
+        name: 'Decagon',
+        color: 'Pink'
+    },
+    {
+        id: 9,
+        image: 'images/redDecagon.png',
+        name: 'Decagon',
+        color: 'Red'
+    },
+    {
+        id: 10,
+        image: 'images/pinkHexagon.png',
+        name: 'Hexagon',
+        color: 'Pink'
+    },
+    {
+        id: 11,
+        image: 'images/redPentagon.png',
+        name: 'Pentagon',
+        color: 'Red'
+    }
+];
+
 //Page initially opens
 let randomInt,
     shapeArray = new Array(0),
@@ -178,7 +253,6 @@ function fillLevel(){
 }
 
 function fillChances(){
-    //const chanceText = document.getElementById('chances');
     chanceText.textContent = `${chances} Chances Left`;
     chanceText.style.backgroundColor = bgdColor;
     console.log(chanceText);
@@ -187,7 +261,7 @@ function fillChances(){
 fillLevel();
 fillChances();
 getGridLayout();
-//console.log(layout);
+
 
 
 //Let's Play button is clicked
@@ -214,25 +288,7 @@ startButton.addEventListener('click', (e) => {
 //Shape is clicked
 
 const displayedShapes = document.getElementById("imagesBox");
-/*
-if (chances == 0) {
-    displayedShapes.removeEventListener("click", function(e){
-        const tgt = e.target;
-        if (tgt.classList.contains("sImage")) {
-            console.log(tgt);
-            console.log(shapeArray.image);
-            if (tgt.attributes.src.value === shapeArray.image) {
-                console.log('true');
-                updateRound();
-            }
-            else {
-                console.log('not a match');
-                updateChances();
-            }
-        }
-})
-} else {
-    */
+
     displayedShapes.addEventListener("click", function(e) {
     const tgt = e.target;
     if (tgt.classList.contains("sImage")) {
@@ -250,13 +306,7 @@ if (chances == 0) {
         }
     }
 })
-/*
-if (chances === 0) {
-    displayedShapes.removeEventListener("click", function(e) {
 
-    })
-}
-*/
 
 
 function updateChances() {
@@ -265,11 +315,6 @@ function updateChances() {
     }
     switch (chances)
     {
-        /*case 3:
-            bgdColor = "ivory";
-            updateRound();
-            break;
-            */
         case 2:
             bgdColor = "yellow";
             updateRound();
@@ -292,14 +337,6 @@ function updateRound() {
     round ++;
     switch (round) 
     {
-        /*case 1:   
-            bgdColor = "ivory";         
-            numShapes = 2;
-            maxNumber = shapes.length;
-            level = 1;
-            resetTimer();
-            break;   
-            */     
         case 2: case 3: case 4:
             numShapes = 2;
             maxNumber = shapes.length;
@@ -317,12 +354,12 @@ function updateRound() {
             break;
         case 13: case 14: case 15:  case 16:
             numShapes = 4;
-            maxNumber = shapes2.length;
+            maxNumber = shapes3.length;
             level = 4;
             //make special case for get coding
             break;
         default:
-            numShapes = 2;
+            winner();
     }
 
     newRound();
@@ -331,11 +368,21 @@ function updateRound() {
 
 }
 
+function winner() {
+    stopTimer();
+    /*
+    endGame = document.getElementById("endGame");
+    const winMessage = document.getElementById("winMessage");
+    endGame.style.display = "none";
+    winMessage.style.display = "block";
+    */
+}
+
 function gameOver() {
     stopTimer();
     /*const endGame = document.getElementById("endGame");
     const loseMessage = document.getElementById("loseMessage");
-    const winMessage = document.getElementById("winMessage");
+    
     endGame.style.display = "block";
     winMessage.style.display = "none";
     */
@@ -384,12 +431,7 @@ function newRound() {
 }
 
 function getImage(randomInt) {
-   /* shapeImage = shapes.filter(function(shape){
-        return shape.id === randomInt;
-    }).map(function(shape){
-        return shape.image;
-    });
-    console.log(shapeImage);*/
+   
     switch (level)
     {
         case 1: case 2:
@@ -454,7 +496,6 @@ function getShape() {
 
 
 function clearText() {
-    //const tText = document.querySelector('colAndShapeName h2');
     const tText = document.querySelector('h3');
     tText.textContent = '';
 }
@@ -462,13 +503,8 @@ function clearText() {
 
 function getShapeToClick(level, chances, round) {
     getShape();
-    //getShapeColor();
-    //getShapeName();
-    //getColorAndName(shapeColor, shapeName);
     const tText = document.querySelector('h3');
     tText.textContent = colorAndName;
-    //let clickThis = document.getElementById('h3');
-    //clickThis.textContent = colorAndName;
 }
 
 function startTimer() {
@@ -477,7 +513,6 @@ function startTimer() {
         elapsedTime = Date.now() - startTime;
         print(timeToString(elapsedTime));
     }, 10);
-  //  showButton("PAUSE");
 
 }
 
@@ -487,26 +522,32 @@ function print(txt) {
 
 function stopTimer() {
     clearInterval(timerInterval);
-   // showButton("PLAY");
 }
 
 function resetTimer(){
     clearInterval(timerInterval);
-    print("00:00:00:000");
+    print("00:00:000");
     elapsedTime = 0;
-    //showButton("PLAY");
 }
-
-/*
-function showButton(buttonKey) {
-    const buttonToShow = buttonKey === "PLAY" ? playButton : pauseButton;
-    const buttonToHide = buttonKey === "PLAY" ? pauseButton : playButton;
-    buttonToShow.style.display = "block";
-    buttonToHide.style.display = "none";
-}
-*/
 
 function timeToString(time) {
+    let diffInMin = time/60000;
+    let mm = Math.floor(diffInMin);
+
+    let diffInSec = (diffInMin - mm) * 60;
+    let ss = Math.floor(diffInSec);
+
+    let diffInMs = (diffInSec - ss) * 1000;
+    let ms = Math.floor(diffInMs);
+
+    let formattedMM = mm.toString().padStart(2, "0");
+    let formattedSS = ss.toString().padStart(2, "0");
+    let formattedMS = ms.toString().padStart(3, "0");
+    return `${formattedMM}:${formattedSS}:${formattedMS}`;
+}
+
+
+/*function timeToString(time) {
     let diffInHrs = time / 3600000;
     let hh = Math.floor(diffInHrs);
 
@@ -525,6 +566,7 @@ function timeToString(time) {
     let formattedMS = ms.toString().padStart(3, "0");
     return `${formattedHH}:${formattedMM}:${formattedSS}:${formattedMS}`;
 }
+*/
 
 
 
