@@ -441,7 +441,7 @@ function getImage(randomInt) {
             shapeArray = shapes2[randomInt];
             break;
         case 4:
-            //shapeArray = special for Coding Peeps
+            shapeArray = shapes3[randomInt];
             break;
     }
     console.log(shapeArray);
