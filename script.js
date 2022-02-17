@@ -227,18 +227,12 @@ const shapes3 = [
 let randomInt,
     shapeArray = new Array(0),
     shapesArray = new Array(0),
-    shapeColor,
-    shapeName,
-    shapeImage,
     colorAndName,
-    iBox,
-    boxShapes,
     arrayLength,
     level = 1,
     chances = 3,
     round = 1,
     elapsedTime = 0,
-    startTime,
     timerInterval,
     maxNumber = shapes.length,
     bgdColor = 'ivory',
@@ -292,15 +286,11 @@ const displayedShapes = document.getElementById("imagesBox");
     displayedShapes.addEventListener("click", function(e) {
     const tgt = e.target;
     if (tgt.classList.contains("sImage")) {
-        console.log(tgt);
-        console.log(shapeArray.image);
         if (chances > 0 && elapsedTime > 0 && round <= 17)    {
             if (tgt.attributes.src.value === shapeArray.image) {
-                console.log('true');
                 updateRound();
             }
             else {
-                console.log('not a match');
                 updateChances();
             }
         }
@@ -392,12 +382,10 @@ function gameOver() {
 function getGridLayout() {
     for (let i = 0; i < numShapes; i++) {
         getRandomInt(maxNumber);
-        console.log(randomInt);
         if (shapesArray.length > 0) {
             for (let j = 0; j < shapesArray.length; j++) {
                 while (shapesArray[j].id === randomInt) {
                     getRandomInt(maxNumber);
-                    console.log(randomInt);
                     j=0;
                 }
                 console.log("outside while");
@@ -406,9 +394,7 @@ function getGridLayout() {
         }
         console.log("outside if");
         //initial button click called when form opens
-        getImage(randomInt);
-        console.log(shapeImage);
-       
+        getImage(randomInt);       
     }
 }
 
@@ -430,7 +416,7 @@ function newRound() {
     //startTimer();
 }
 
-function getImage(randomInt) {
+function getImage() {
    
     switch (level)
     {
@@ -444,10 +430,10 @@ function getImage(randomInt) {
             shapeArray = shapes3[randomInt];
             break;
     }
-    console.log(shapeArray);
+    //console.log(shapeArray);
     arrayLength = shapesArray.push(shapeArray);
-    console.log(shapesArray);
-    shapeImage = shapeArray.image;
+    //console.log(shapesArray);
+    const shapeImage = shapeArray.image;
     
 
 
@@ -483,13 +469,11 @@ function clearImages() {
 function getShape() {
     arrayLength = shapesArray.length;
     getRandomInt(arrayLength);
-    console.log(randomInt);
     //initial button click called when form opens
     shapeArray = shapesArray[randomInt];
-    shapeColor = shapeArray.color;
-    shapeName = shapeArray.name;
+    const shapeColor = shapeArray.color;
+    const shapeName = shapeArray.name;
     colorAndName = `${shapeColor} ${shapeName}`;
-    console.log(colorAndName);
     return colorAndName;
       
 }
@@ -508,7 +492,7 @@ function getShapeToClick(level, chances, round) {
 }
 
 function startTimer() {
-    startTime = Date.now() - elapsedTime;
+    const startTime = Date.now() - elapsedTime;
     timerInterval = setInterval(function printTime() {
         elapsedTime = Date.now() - startTime;
         print(timeToString(elapsedTime));
