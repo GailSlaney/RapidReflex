@@ -294,7 +294,7 @@ const displayedShapes = document.getElementById("imagesBox");
     if (tgt.classList.contains("sImage")) {
         console.log(tgt);
         console.log(shapeArray.image);
-        if (chances > 0 && elapsedTime > 0)    {
+        if (chances > 0 && elapsedTime > 0 && round <= 17)    {
             if (tgt.attributes.src.value === shapeArray.image) {
                 console.log('true');
                 updateRound();
