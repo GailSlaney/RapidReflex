@@ -413,7 +413,6 @@ function newRound() {
     fillChances();
     getGridLayout();
     getShapeToClick();
-    //startTimer();
 }
 
 function getImage() {
@@ -430,15 +429,10 @@ function getImage() {
             shapeArray = shapes3[randomInt];
             break;
     }
-    //console.log(shapeArray);
+   
     arrayLength = shapesArray.push(shapeArray);
-    //console.log(shapesArray);
     const shapeImage = shapeArray.image;
-    
-
-
     //append the image to the list of images in box
-    
     let img = document.createElement("img");
     let imagesBox = document.getElementById("imagesBox");
     img.src = shapeImage;
@@ -474,16 +468,13 @@ function getShape() {
     const shapeColor = shapeArray.color;
     const shapeName = shapeArray.name;
     colorAndName = `${shapeColor} ${shapeName}`;
-    return colorAndName;
-      
+    return colorAndName;      
 }
-
 
 function clearText() {
     const tText = document.querySelector('h3');
     tText.textContent = '';
 }
-
 
 function getShapeToClick(level, chances, round) {
     getShape();
@@ -497,7 +488,6 @@ function startTimer() {
         elapsedTime = Date.now() - startTime;
         print(timeToString(elapsedTime));
     }, 10);
-
 }
 
 function print(txt) {
@@ -529,28 +519,3 @@ function timeToString(time) {
     let formattedMS = ms.toString().padStart(3, "0");
     return `${formattedMM}:${formattedSS}:${formattedMS}`;
 }
-
-
-/*function timeToString(time) {
-    let diffInHrs = time / 3600000;
-    let hh = Math.floor(diffInHrs);
-
-    let diffInMin = (diffInHrs - hh) * 60;
-    let mm = Math.floor(diffInMin);
-
-    let diffInSec = (diffInMin - mm) * 60;
-    let ss = Math.floor(diffInSec);
-
-    let diffInMs = (diffInSec - ss) * 1000;
-    let ms = Math.floor(diffInMs);
-
-    let formattedHH = hh.toString().padStart(2, "0");
-    let formattedMM = mm.toString().padStart(2, "0");
-    let formattedSS = ss.toString().padStart(2, "0");
-    let formattedMS = ms.toString().padStart(3, "0");
-    return `${formattedHH}:${formattedMM}:${formattedSS}:${formattedMS}`;
-}
-*/
-
-
-
