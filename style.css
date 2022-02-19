@@ -83,15 +83,12 @@ a {
     flex-wrap: wrap;
    
    justify-content: center;
-    /*align-items: space-evenly;*/
-    gap: 10px;
-   
+    gap: 10px;   
     width: auto;
     height: auto;
     border: black solid 2px;
     background-color:ivory;
 }
-
 
 .sImgA {
     flex: 0 1 200px;
@@ -104,7 +101,6 @@ a {
     cursor: pointer;
    
 }
-
 
 .timerGrid {
     display: grid;
@@ -120,11 +116,9 @@ a {
     justify-items: center;
     align-items: center;
     background-color: rgb(67, 19, 158);
-    color: rgb(244, 240, 255);
-    
+    color: rgb(244, 240, 255);    
     height: 150px;
     width: 300px;
-
     border: 5px solid;
     border-radius: 30%;
 }
@@ -149,7 +143,6 @@ a {
 
 button {
     cursor: pointer;
-    /*background: transparent;*/
     padding: 0;
     border: none;
     margin: 0;
@@ -203,10 +196,8 @@ button {
     grid-area: level;
     background-color: ivory;
     border-radius: 5px;
-    /*height: 20px;*/
     padding: 10px;
-    border: 5px #333 solid;
-    
+    border: 5px #333 solid;    
     justify-content: center;
     align-content: center;
 }
