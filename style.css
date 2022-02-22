@@ -225,3 +225,23 @@ button {
 #startButton {
     grid-area: startButton;
 }
+
+#winMessage {
+    display: none;
+}
+
+#loseMessage {
+    display: none;
+}
+
+#gameOver {
+    display: none;
+    background-color: blue;
+    width: 400px;
+    padding: 40px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 8px;
+}

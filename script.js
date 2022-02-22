@@ -236,7 +236,8 @@ let randomInt,
     timerInterval,
     maxNumber = shapes.length,
     bgdColor = 'ivory',
-    numShapes = 2;
+    numShapes = 2,
+    timeMessage;
 
 const sGrid = document.getElementById('imagesBox');
 const chanceText = document.getElementById('chances');
@@ -317,7 +318,7 @@ function updateChances() {
         
         case 0:
             bgdColor = "red";
-            gameOver();
+            loser();
             break;
     }
             fillChances();
@@ -358,8 +359,38 @@ function updateRound() {
 
 }
 
+function getFinalTime(){
+    let diffInMin = elapsedTime/60000;
+    let mins = Math.floor(diffInMin);
+
+    let diffInSec = (diffInMin - mins) * 60;
+    let secs = diffInSec.toFixed(1);
+    /*let ss = Math.floor(diffInSec);
+
+    let diffInMs = (diffInSec - ss) * 1000;
+    let ms = Math.floor(diffInMs);
+
+    let formattedMM = mm.toString().padStart(2, "0");
+    let formattedSS = ss.toString().padStart(2, "0");
+    let formattedMS = ms.toString().padStart(3, "0");*/
+
+    if(mins > 1) {
+        timeMessage = `${mins} Minutes, ${secs} Seconds`;
+    } else if(mins > 0) {
+        timeMessage = `${mins} Minute, ${secs} Seconds`;
+    } else {
+        timeMessage = `${secs} Seconds`;
+    }
+}
+return timeMessage;
+
 function winner() {
-    stopTimer();
+    getFinalTime();
+    const tText = document.querySelector('h3');
+    tText.textContent = `You Beat the Game in ${timeMessage}!! Play Again?`;
+    gameOver();
+    
+
     /*
     endGame = document.getElementById("endGame");
     const winMessage = document.getElementById("winMessage");
@@ -368,8 +399,25 @@ function winner() {
     */
 }
 
+function loser() {
+    getFinalTime();
+    const tText = document.querySelector('h3');
+    tText.textContent = `Good Try! You lasted for ${timeMessage}!! Play Again?`;
+    gameOver();
+}
+
 function gameOver() {
     stopTimer();
+    //clearText();
+    clearImages();
+    let img = document.createElement("img");
+    let imagesBox = document.getElementById("imagesBox");
+    img.src = "images/gameOver.png";
+    img.setAttribute("class", "sImage");
+    imagesBox.appendChild(img);
+    //const tText = document.querySelector('h3');
+    //tText.textContent = "Good Try! Play Again?";
+    //document.getElementById("gameOver").style.display = "block";
     /*const endGame = document.getElementById("endGame");
     const loseMessage = document.getElementById("loseMessage");
     
@@ -406,7 +454,7 @@ function getRandomInt(maxNumber) {
 
 
 function newRound() {
-    clearText();
+    //clearText();
     clearImages();
     shapesArray = new Array(0);
     fillLevel();
@@ -517,5 +565,13 @@ function timeToString(time) {
     let formattedMM = mm.toString().padStart(2, "0");
     let formattedSS = ss.toString().padStart(2, "0");
     let formattedMS = ms.toString().padStart(3, "0");
+
+    if(mm>0) {
+        timeMessage = `${mm} Minutes, ${diffInSec} Seconds`;
+    } else {
+        timeMessage = `${diffInSec} Seconds`;
+    }
+
     return `${formattedMM}:${formattedSS}:${formattedMS}`;
+      
 }
