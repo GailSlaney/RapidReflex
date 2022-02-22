@@ -381,8 +381,8 @@ function getFinalTime(){
     } else {
         timeMessage = `${secs} Seconds`;
     }
+    return timeMessage;
 }
-return timeMessage;
 
 function winner() {
     getFinalTime();
