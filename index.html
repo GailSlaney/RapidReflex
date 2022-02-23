@@ -9,14 +9,15 @@
 </head>
 <body>
     <div class="container">
-        <div class="box_1">
-            <h1>How fast are your reflexes?</h1>
-            <br>
-            <h2>Click the image that matches the description below as the stopclock records your response time!</h2>
-        </div>
-        <br>
+        
 
         <div class="shapes_timer">
+            <div class="box_1">
+                <h1>How fast are your reflexes?</h1>
+                <br>
+                <h2>Click the image that matches the description below as the stopclock records your response time!</h2>
+            </div>
+            <br>
             <div id="level"></div>
             <div id="chances"></div>
             <div id="imagesBox">
@@ -33,18 +34,19 @@
                 </div>
             </div>
         
-        <div id="colAndShapeName">
-            <h3>Image Description to Click</h3>
-        </div>
+            <div id="colAndShapeName">
+                <h3>Image Description to Click</h3>
+            </div>
         
-        <div>
-            <button id="startButton"> New Game </button>
-        </div>
-        <div id = "endGame"> 
-            <div id = "winMessage">Congratulations! You Beat the Game in <span class = "timeToWin">00:00:000</span></div>
-            <div id = "loseMessage">Good Try! You played for <span class = "timeToWin">00:00:000</span></div>
-            <img id = "gameOver" src = "./images/gameOver.png">
-        </div>
+            <div>
+                <button id="startButton"> New Game </button>
+            </div>
+            <div id = "endGame"> 
+                <div id = "winMessage">Congratulations! You Beat the Game in <span class = "timeToWin">00:00:000</span></div>
+                <div id = "loseMessage">Good Try! You played for <span class = "timeToWin">00:00:000</span></div>
+                <img id = "gameOver" src = "./images/gameOver.png">
+            </div>
+        </div>  
     </div>
     <script src="./script.js"></script>
 </body>
