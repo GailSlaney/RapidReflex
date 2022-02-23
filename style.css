@@ -58,7 +58,7 @@ a {
     grid-auto-flow: column;
     grid-template-areas:
         "box_1 box_1"
-        "level  chances" 
+        "level chances" 
         "imagesBox timerGrid"
         "imagesBox timerGrid"
         "imagesBox colAndShapeName"
@@ -98,6 +98,7 @@ a {
 }
 
 #imagesBox {
+    grid-area: imagesBox;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -123,6 +124,7 @@ a {
 }
 
 .timerGrid {
+    grid-area: timerGrid;
     display: grid;
     justify-items:center;
     align-items: flex-start;
@@ -180,6 +182,7 @@ button {
 }
 
 #colAndShapeName {
+    grid-area: colAndShapeName;
     /*width: 90%;*/
     border-radius: 5px;
     /*height: 20px;*/
@@ -200,6 +203,7 @@ button {
 }
 
 #startButton {
+    grid-area: startButton;
     width: 150px;
     height: 50px;
     background-color: #333;
@@ -227,7 +231,7 @@ button {
     padding: 10px;
     border: 5px #333 solid;
 }
-
+/*
 #imagesBox {
     grid-area: imagesBox;
 }
@@ -235,12 +239,15 @@ button {
 .timerGrid {
     grid-area: timerGrid;
 }
+
 #colAndShapeName {
     grid-area: colAndShapeName;
 }
+
 #startButton {
     grid-area: startButton;
 }
+*/
 
 #winMessage {
     display: none;
