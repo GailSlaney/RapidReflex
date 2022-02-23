@@ -13,7 +13,7 @@ There are currently 4 levels in the game. Each level lasts for 4 rounds:
   - Level 1 displays 2 beginner images at a time.
   - Level 2 displays 4 beginner images at a time.
   - Level 3 displays 4 more complex images.
-  - Level 4 displays images that hopefully interests my Get Coding peeps! :-)
+  - Level 4 displays images that hopefully interest my Get Coding peeps! :-)
 
 I have been thinking of other levels and skills that can use this game. Variations of the game can teach spelling and math skills.
 
