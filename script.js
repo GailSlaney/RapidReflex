@@ -248,7 +248,7 @@ function fillLevel(){
 }
 
 function fillChances(){
-    chanceText.textContent = `${chances} Chances Left`;
+    chanceText.textContent = `${chances} Chances`;
     chanceText.style.backgroundColor = bgdColor;
     console.log(chanceText);
 }
@@ -490,7 +490,7 @@ function getImage() {
 
 //Remove images from box
 function clearImages() {
-    let sImgA = document.getElementsByClassName("sImgA");
+    //let sImgA = document.getElementsByClassName("sImgA");
     let imagesBox = document.getElementById("imagesBox");
     let sButton = document.querySelector("button");
     let childElementCount = imagesBox.childElementCount;
