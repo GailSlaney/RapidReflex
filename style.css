@@ -7,7 +7,7 @@ body    {
     background-color: azure;
     color: darkslategray;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1em; /*16px;*/
+    font-size: 1.3em;
     font-weight: normal;
     background-image : url(images/background6.png);
     background-size:cover;
@@ -16,10 +16,9 @@ body    {
 }
 
 .container  {
-    width: 95%;
+    width: 98%;
     max-width: 900px;
     margin: auto;
-    /*margin: 1em;*/
      
 }
 
@@ -34,12 +33,12 @@ body    {
 
 .box_1 h1 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.5em;    
+    font-size: 1.1em;    
 }
 
 .box_1 h2 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1em;
+    font-size: 0.9em;
 }
 
 .shapes_timer {
@@ -47,8 +46,8 @@ body    {
     grid-auto-flow: column;
     grid-template-areas:
         "level chances" 
-        "imagesBox timerGrid"
-        "imagesBox timerGrid"
+        "imagesBox timer"
+        "imagesBox timer"
         "imagesBox colAndShapeName"
         "imagesBox startButton";
     justify-items: center;
@@ -60,7 +59,7 @@ body    {
 
 #level {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.5rem;
+    font-size: 1em;
     font-weight: bold;
     display: flex;
     flex-direction: row;
@@ -70,18 +69,18 @@ body    {
     height: auto;
     border-radius: 30px;
     grid-area: level;
-    background-color: ivory;
-    padding: 10px;
-    border: 5px #333 solid;    
+    background-color: ivory; 
     justify-content: center;
     align-content: center; 
+    padding: 7px;
+    border: 2px #333 solid;   
     
     
 }
 
 #chances {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.5em;
+    font-size: 1em;
     font-weight: bold;
     display: flex;
     flex-direction: row;
@@ -92,7 +91,7 @@ body    {
     border-radius: 30px;
     grid-area: chances;
     background-color: ivory;
-    padding: 10px;
+    padding: 7px;
     border: 2px #333 solid;
 
 }
@@ -116,31 +115,19 @@ body    {
     object-fit: contain;
     object-position: 50% 50%;
     cursor: pointer;
-   width: 6em;
-}
-
-.timerGrid {
-    grid-area: timerGrid;
-    display: grid;
-    justify-items:center;
-    align-items: flex-start;
-    grid-row-gap: 5px;
-    width: 100%;
-
+   width: 3.8em;
 }
 
 #timer {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 0.8em;
-    font-weight:lighter;
+    grid-area: timer;
     display:grid;  
     grid-template-rows: 1fr 1fr 1fr 1fr;
     justify-items: center;
     align-items: center;
     background-color: rgb(67, 19, 158);
     color: rgb(244, 240, 255);    
-    height: 8em; /*150px;*/
-    width: 12em; /*300px;*/
+    height: 4em; /*150px;*/
+    width: 8em; /*300px;*/
     border: 2px solid;
     border-radius: 30%;
 }
@@ -157,31 +144,9 @@ body    {
     color: floralwhite;
 }
 
-button {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 0.8rem;
-    cursor: pointer;
-    padding: 0;
-    border: none;
-    margin: 0;
-    outline: none;
-}
-
-#endGame {
-    height: 150px;
-    width: 300px;
-    border: 5px solid;
-    border-radius: 10%;
-    background-color: lightgray;
-    color:midnightblue;
-    display: none;
-}
-
 #colAndShapeName {
     grid-area: colAndShapeName;
-    /*width: 90%;*/
     border-radius: 5px;
-    /*height: 20px;*/
     padding: 5px;
     background-color: ivory;
     color: #333;
@@ -194,33 +159,71 @@ button {
 }
 #colAndShapeName h3 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 0.8em;
+    font-size: 0.7em;
     font-weight:bold;
     align-self: center;
     justify-self: center;
 }
-
+  
 #startButton {
+    cursor: pointer;
     grid-area: startButton;
-    width: 150px;
-    height: 50px;
+    width: auto;
+    height: auto;
     background-color: #333;
     color: #fff;
     padding: 10px 15px;
     border: none;
     border-radius: 10% / 50%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1em;
+    font-size: 0.8em;
 
 }
 
 
+#endGame {
+    width: 150px;
+    height: 50px;
+    border: 5px solid;
+    border-radius: 10%;
+    background-color: lightgray;
+    color:midnightblue;
+    display: none;
+}
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 775px) {  /*600px*/
+   body {
+       font-size: 2em;
+   }
     .container  {
         width: 95%;
         /*max-width: 800px;*/
         margin: auto;         
+    }
+    #level {
+        font-size: 1.3em;
+    }
+    #chances {
+        font-size: 1.3em;
+    }
+    .sImage {
+        width: 6em;
+    }
+    #timer {
+        height: 5em;
+        width: 10em;
+    }
+    .time {
+        font-size: 1.3em;
+    }
+    .units {
+        font-size: 1.3em;
+    }
+    #colAndShapeName h3 {
+        font-size: 0.8em;
+    }
+    #startButton {
+        font-size: 1.0em;
     }
 }
 
