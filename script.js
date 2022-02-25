@@ -242,11 +242,13 @@ let randomInt,
 const sGrid = document.getElementById('imagesBox');
 const chanceText = document.getElementById('chances');
 
+//Update Level #
 function fillLevel(){
     const levelText = document.getElementById('level');
     levelText.textContent = `Level ${level}`;
 }
 
+//Updated # Chances Left
 function fillChances(){
     chanceText.textContent = `${chances} Chances`;
     chanceText.style.backgroundColor = bgdColor;
@@ -262,9 +264,7 @@ getGridLayout();
 //Let's Play button is clicked
 const startButton = document.getElementById('startButton');
 startButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    console.log('button click');
-    
+    e.preventDefault();    
     //Game begins with 2 images displayed
     numShapes = 2;
     level = 1;
@@ -274,8 +274,8 @@ startButton.addEventListener('click', (e) => {
     resetTimer();
     startTimer();
     newRound();
+    displayedShapes.addEventListener('click', checkClick);
     console.log('actual button click');
-    
 })
 
 
@@ -283,8 +283,11 @@ startButton.addEventListener('click', (e) => {
 //Shape is clicked
 
 const displayedShapes = document.getElementById("imagesBox");
+displayedShapes.addEventListener('click', checkClick);
 
-    displayedShapes.addEventListener("click", function(e) {
+
+ /* 
+displayedShapes.addEventListener("click", function(e) {
     const tgt = e.target;
     if (tgt.classList.contains("sImage")) {
         if (chances > 0 && elapsedTime > 0 && round <= 17)    {
@@ -297,7 +300,21 @@ const displayedShapes = document.getElementById("imagesBox");
         }
     }
 })
-
+*/
+function checkClick(e) {
+    const tgt = e.target;
+    if (tgt.classList.contains("sImage")) {
+        console.log(e.currentTarget.tagName);
+        if (chances > 0 && elapsedTime > 0 && round < 17)    {
+            if (tgt.attributes.src.value === shapeArray.image) {
+                updateRound();
+            }
+            else {
+                updateChances();
+            }
+        }
+    }
+}
 
 
 function updateChances() {
@@ -408,17 +425,31 @@ function loser() {
 
 function gameOver() {
     stopTimer();
-    //clearText();
     clearImages();
     let img = document.createElement("img");
     let imagesBox = document.getElementById("imagesBox");
     img.src = "images/gameOver.png";
     img.setAttribute("class", "sImage");
     imagesBox.appendChild(img);
+    //startButton.removeEventListener('click',e, false);
+    displayedShapes.removeEventListener('click', checkClick);
+   /*i displayedShapes.removeEventListener("click", function(e) {
+        const tgt = e.target;
+        f (tgt.classList.contains("sImage")) {
+            if (chances > 0 && elapsedTime > 0 && round <= 17)    {
+                if (tgt.attributes.src.value === shapeArray.image) {
+                    updateRound();
+                }
+                else {
+                    updateChances();
+                }
+            }
+        }
+    }
     //const tText = document.querySelector('h3');
     //tText.textContent = "Good Try! Play Again?";
     //document.getElementById("gameOver").style.display = "block";
-    /*const endGame = document.getElementById("endGame");
+    const endGame = document.getElementById("endGame");
     const loseMessage = document.getElementById("loseMessage");
     
     endGame.style.display = "block";
@@ -519,10 +550,12 @@ function getShape() {
     return colorAndName;      
 }
 
+/*
 function clearText() {
     const tText = document.querySelector('h3');
     tText.textContent = '';
 }
+*/
 
 function getShapeToClick(level, chances, round) {
     getShape();
