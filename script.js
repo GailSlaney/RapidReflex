@@ -443,7 +443,8 @@ function getImage() {
             shapeArray = shapes2[randomInt];
             break;
         case 4:
-            shapeArray = shapes3[randomInt];
+            shapeArray = shapes2[randomInt];
+            // temporarily removed... shapeArray = shapes3[randomInt];
             break;
     }
    
