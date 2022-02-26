@@ -252,7 +252,6 @@ function fillLevel(){
 function fillChances(){
     chanceText.textContent = `${chances} Chances`;
     chanceText.style.backgroundColor = bgdColor;
-    console.log(chanceText);
 }
 
 fillLevel();
@@ -275,7 +274,6 @@ startButton.addEventListener('click', (e) => {
     startTimer();
     newRound();
     displayedShapes.addEventListener('click', checkClick);
-    console.log('actual button click');
 })
 
 
@@ -288,7 +286,6 @@ displayedShapes.addEventListener('click', checkClick);
 function checkClick(e) {
     const tgt = e.target;
     if (tgt.classList.contains("sImage")) {
-        console.log(e.currentTarget.tagName);
         if (chances > 0 && elapsedTime > 0 && round < 17)    {
             if (tgt.attributes.src.value === shapeArray.image) {
                 updateRound();
@@ -355,7 +352,6 @@ function updateRound() {
     }
     if (round < 17) {
     newRound();
-    console.log("updateRound Function");
     }
 
 }
@@ -412,11 +408,8 @@ function getGridLayout() {
                     getRandomInt(maxNumber);
                     j=0;
                 }
-                console.log("outside while");
             } 
-            console.log("outside for");
         }
-        console.log("outside if");
         //initial button click called when form opens
         getImage(randomInt);       
     }
@@ -470,10 +463,6 @@ function clearImages() {
     let imagesBox = document.getElementById("imagesBox");
     let sButton = document.querySelector("button");
     let childElementCount = imagesBox.childElementCount;
-    console.log(imagesBox.childElementCount);
-    console.log(imagesBox.childNodes);
-    console.log(imagesBox.children);
-    console.log(imagesBox.lastElementChild);
     let child = imagesBox.lastElementChild;
     while (child) {
         imagesBox.removeChild(child);
