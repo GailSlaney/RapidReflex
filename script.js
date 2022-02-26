@@ -285,22 +285,6 @@ startButton.addEventListener('click', (e) => {
 const displayedShapes = document.getElementById("imagesBox");
 displayedShapes.addEventListener('click', checkClick);
 
-
- /* 
-displayedShapes.addEventListener("click", function(e) {
-    const tgt = e.target;
-    if (tgt.classList.contains("sImage")) {
-        if (chances > 0 && elapsedTime > 0 && round <= 17)    {
-            if (tgt.attributes.src.value === shapeArray.image) {
-                updateRound();
-            }
-            else {
-                updateChances();
-            }
-        }
-    }
-})
-*/
 function checkClick(e) {
     const tgt = e.target;
     if (tgt.classList.contains("sImage")) {
@@ -382,15 +366,7 @@ function getFinalTime(){
 
     let diffInSec = (diffInMin - mins) * 60;
     let secs = diffInSec.toFixed(1);
-    /*let ss = Math.floor(diffInSec);
-
-    let diffInMs = (diffInSec - ss) * 1000;
-    let ms = Math.floor(diffInMs);
-
-    let formattedMM = mm.toString().padStart(2, "0");
-    let formattedSS = ss.toString().padStart(2, "0");
-    let formattedMS = ms.toString().padStart(3, "0");*/
-
+  
     if(mins > 1) {
         timeMessage = `${mins} Minutes, ${secs} Seconds`;
     } else if(mins > 0) {
@@ -406,14 +382,6 @@ function winner() {
     const tText = document.querySelector('h3');
     tText.textContent = `You Beat the Game in ${timeMessage}!! Play Again?`;
     gameOver();
-    
-
-    /*
-    endGame = document.getElementById("endGame");
-    const winMessage = document.getElementById("winMessage");
-    endGame.style.display = "none";
-    winMessage.style.display = "block";
-    */
 }
 
 function loser() {
@@ -431,30 +399,7 @@ function gameOver() {
     img.src = "images/gameOver.png";
     img.setAttribute("class", "sImage");
     imagesBox.appendChild(img);
-    //startButton.removeEventListener('click',e, false);
     displayedShapes.removeEventListener('click', checkClick);
-   /*i displayedShapes.removeEventListener("click", function(e) {
-        const tgt = e.target;
-        f (tgt.classList.contains("sImage")) {
-            if (chances > 0 && elapsedTime > 0 && round <= 17)    {
-                if (tgt.attributes.src.value === shapeArray.image) {
-                    updateRound();
-                }
-                else {
-                    updateChances();
-                }
-            }
-        }
-    }
-    //const tText = document.querySelector('h3');
-    //tText.textContent = "Good Try! Play Again?";
-    //document.getElementById("gameOver").style.display = "block";
-    const endGame = document.getElementById("endGame");
-    const loseMessage = document.getElementById("loseMessage");
-    
-    endGame.style.display = "block";
-    winMessage.style.display = "none";
-    */
 }
 
 //Populates the random shapes
@@ -550,12 +495,6 @@ function getShape() {
     return colorAndName;      
 }
 
-/*
-function clearText() {
-    const tText = document.querySelector('h3');
-    tText.textContent = '';
-}
-*/
 
 function getShapeToClick(level, chances, round) {
     getShape();
