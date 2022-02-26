@@ -26,7 +26,7 @@ Users can compete by attempting to beat the game in the shortest time!
     - Level 3 displays 4 more complex images.
     - Level 4 displays images that hopefully interest my Get Coding peeps! :-)
 
-I have been thinking of other levels and skills that can use this game. Variations of the game can teach spelling and math skills.
+I have been thinking of other levels and skills that can be included in this game. Variations of the game can teach spelling and math skills.
 
 The project uses javascript, css, and html. 
 
