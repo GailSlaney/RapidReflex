@@ -242,29 +242,16 @@ let randomInt,
 const sGrid = document.getElementById('imagesBox');
 const chanceText = document.getElementById('chances');
 
-//Update Level #
-function fillLevel(){
-    const levelText = document.getElementById('level');
-    levelText.textContent = `Level ${level}`;
-}
-
-//Updated # Chances Left
-function fillChances(){
-    chanceText.textContent = `${chances} Chances`;
-    chanceText.style.backgroundColor = bgdColor;
-}
-
+// Functions are called when page opens to initially fill game contents
 fillLevel();
 fillChances();
 getGridLayout();
 
-
-
-//Let's Play button is clicked
+// Let's Play button is clicked
 const startButton = document.getElementById('startButton');
 startButton.addEventListener('click', (e) => {
     e.preventDefault();    
-    //Game begins with 2 images displayed
+    // Game begins with 2 images displayed
     numShapes = 2;
     level = 1;
     chances = 3;
@@ -276,10 +263,7 @@ startButton.addEventListener('click', (e) => {
     displayedShapes.addEventListener('click', checkClick);
 })
 
-
-
-//Shape is clicked
-
+// Shape is clicked
 const displayedShapes = document.getElementById("imagesBox");
 displayedShapes.addEventListener('click', checkClick);
 
@@ -297,7 +281,36 @@ function checkClick(e) {
     }
 }
 
+//Populates Level # textbox
+function fillLevel(){
+    const levelText = document.getElementById('level');
+    levelText.textContent = `Level ${level}`;
+}
 
+//Populates # Chances Left textbox
+function fillChances(){
+    chanceText.textContent = `${chances} Chances`;
+    chanceText.style.backgroundColor = bgdColor;
+}
+
+// Populates the random shapes
+function getGridLayout() {
+    for (let i = 0; i < numShapes; i++) {
+        getRandomInt(maxNumber);
+        if (shapesArray.length > 0) {
+            for (let j = 0; j < shapesArray.length; j++) {
+                while (shapesArray[j].id === randomInt) {
+                    getRandomInt(maxNumber);
+                    j=0;
+                }
+            } 
+        }
+        // Initial button click called when form opens
+        getImage(randomInt);       
+    }
+}
+
+//update #Chances
 function updateChances() {
     if (chances > 0) {
         chances --;
@@ -322,6 +335,7 @@ function updateChances() {
             fillChances();
 }
 
+//update round#
 function updateRound() {
     round ++;
     switch (round) 
@@ -353,16 +367,14 @@ function updateRound() {
     if (round < 17) {
     newRound();
     }
-
 }
 
+// Gets final time at end of game
 function getFinalTime(){
     let diffInMin = elapsedTime/60000;
     let mins = Math.floor(diffInMin);
-
     let diffInSec = (diffInMin - mins) * 60;
     let secs = diffInSec.toFixed(1);
-  
     if(mins > 1) {
         timeMessage = `${mins} Minutes, ${secs} Seconds`;
     } else if(mins > 0) {
@@ -373,6 +385,7 @@ function getFinalTime(){
     return timeMessage;
 }
 
+// Fills textbox with message if player beats the game
 function winner() {
     getFinalTime();
     const tText = document.querySelector('h3');
@@ -380,6 +393,7 @@ function winner() {
     gameOver();
 }
 
+// Fills textbox with message if player loses game
 function loser() {
     getFinalTime();
     const tText = document.querySelector('h3');
@@ -387,6 +401,7 @@ function loser() {
     gameOver();
 }
 
+// Stops game and displays gameover image
 function gameOver() {
     stopTimer();
     clearImages();
@@ -398,32 +413,14 @@ function gameOver() {
     displayedShapes.removeEventListener('click', checkClick);
 }
 
-//Populates the random shapes
-function getGridLayout() {
-    for (let i = 0; i < numShapes; i++) {
-        getRandomInt(maxNumber);
-        if (shapesArray.length > 0) {
-            for (let j = 0; j < shapesArray.length; j++) {
-                while (shapesArray[j].id === randomInt) {
-                    getRandomInt(maxNumber);
-                    j=0;
-                }
-            } 
-        }
-        //initial button click called when form opens
-        getImage(randomInt);       
-    }
-}
-
-//getRandomInt function determines which shapes and colors to display
+// Determines which shapes and colors to display
 function getRandomInt(maxNumber) {
     randomInt = Math.floor(Math.random() * maxNumber);
     return randomInt;
 }
 
-
+// Updates all fields to start each round
 function newRound() {
-    //clearText();
     clearImages();
     shapesArray = new Array(0);
     fillLevel();
@@ -432,8 +429,8 @@ function newRound() {
     getShapeToClick();
 }
 
+// Randomly selects image to display in box based on which level is being played
 function getImage() {
-   
     switch (level)
     {
         case 1: case 2:
@@ -447,10 +444,9 @@ function getImage() {
             // temporarily removed... shapeArray = shapes3[randomInt];
             break;
     }
-   
     arrayLength = shapesArray.push(shapeArray);
     const shapeImage = shapeArray.image;
-    //append the image to the list of images in box
+    // Append the image to the list of images in box
     let img = document.createElement("img");
     let imagesBox = document.getElementById("imagesBox");
     img.src = shapeImage;
@@ -458,7 +454,7 @@ function getImage() {
     imagesBox.appendChild(img);
 }
 
-//Remove images from box
+// Remove images from box
 function clearImages() {
     //let sImgA = document.getElementsByClassName("sImgA");
     let imagesBox = document.getElementById("imagesBox");
@@ -469,11 +465,9 @@ function clearImages() {
         imagesBox.removeChild(child);
         child = imagesBox.lastElementChild;
     }
-   
 }
 
-
-//Populates the random shapes
+// Populates the random shapes
 function getShape() {
     arrayLength = shapesArray.length;
     getRandomInt(arrayLength);
@@ -485,13 +479,14 @@ function getShape() {
     return colorAndName;      
 }
 
-
+// Fills textbox with description of image to click
 function getShapeToClick(level, chances, round) {
     getShape();
     const tText = document.querySelector('h3');
     tText.textContent = colorAndName;
 }
 
+// Start timer at beginning of game
 function startTimer() {
     const startTime = Date.now() - elapsedTime;
     timerInterval = setInterval(function printTime() {
@@ -500,20 +495,24 @@ function startTimer() {
     }, 10);
 }
 
+// Fills timer display digits
 function print(txt) {
     document.getElementById("display").innerHTML = txt;
 }
 
+// Stops timer
 function stopTimer() {
     clearInterval(timerInterval);
 }
 
+// Resets timer to 0 at beginning of game
 function resetTimer(){
     clearInterval(timerInterval);
     print("00:00:000");
     elapsedTime = 0;
 }
 
+// Formats time to display properly
 function timeToString(time) {
     let diffInMin = time/60000;
     let mm = Math.floor(diffInMin);

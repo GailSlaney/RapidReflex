@@ -12,14 +12,12 @@ body    {
     background-image : url(images/background6.png);
     background-size:cover;
     background-repeat: no-repeat;
-    
 }
 
 .container  {
     width: 98%;
     max-width: 900px;
-    margin: auto;
-     
+    margin: auto;    
 }
 
 .box_1 {
@@ -73,9 +71,7 @@ body    {
     justify-content: center;
     align-content: center; 
     padding: 7px;
-    border: 2px #333 solid;   
-    
-    
+    border: 2px #333 solid;
 }
 
 #chances {
