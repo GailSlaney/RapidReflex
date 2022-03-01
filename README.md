@@ -6,22 +6,22 @@ Having young grandchildren motivated me to look for fun ways to teach them new s
 
 How The Game Is Played
 
-##When the user clicks the "Start Game" button:
-    - The stopclock begins
+When the user clicks the "Start Game" button
+    *   The stopclock begins
     - Colored shape images are randomly selected from the array of images and displayed on the screen
     - A textbox displays words describing one of the two images
     - The user needs to click the image that matches the description. (The description is also randomly selected from the images displayed on the screen.)
     - As soon as the user clicks the image, new images are randomly selected and a new description is randomly displayed.
 
-##The game continues until the user:
+The game continues until the user:
     - Loses by clicking the wrong image 3 times
     - Or beats the game by completing all 16 rounds (4 levels) of the game. 
 
 At the end of the game, the user is told how long they lasted (if they lost 3 lives), or how long it took them to beat the game. 
 Users can compete by attempting to beat the game in the shortest time! 
 
-#Game Levels Explanation
-##There are currently 4 levels in the game. Each level lasts for 4 rounds:
+Game Levels Explanation
+There are currently 4 levels in the game. Each level lasts for 4 rounds:
     - Level 1 displays 2 beginner images at a time.
     - Level 2 displays 4 beginner images at a time.
     - Level 3 displays 4 more complex images.
