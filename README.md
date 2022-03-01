@@ -7,9 +7,9 @@ Having young grandchildren motivated me to look for fun ways to teach them new s
 How The Game Is Played
 
 When the user clicks the "Start Game" button
-    *   The stopclock begins
-    - Colored shape images are randomly selected from the array of images and displayed on the screen
-    - A textbox displays words describing one of the two images
+   1 The stopclock begins
+   2  Colored shape images are randomly selected from the array of images and displayed on the screen
+   3  A textbox displays words describing one of the two images
     - The user needs to click the image that matches the description. (The description is also randomly selected from the images displayed on the screen.)
     - As soon as the user clicks the image, new images are randomly selected and a new description is randomly displayed.
 
