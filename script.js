@@ -478,8 +478,7 @@ function getImage() {
             shapeArray = shapes2[randomInt];
             break;
         case 4:
-            shapeArray = shapes2[randomInt];
-            // temporarily removed... shapeArray = shapes3[randomInt];
+            shapeArray = shapes3[randomInt];
             break;
     }
     arrayLength = shapesArray.push(shapeArray);
