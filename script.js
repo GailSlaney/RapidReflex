@@ -244,17 +244,44 @@ const chanceText = document.getElementById('chances');
 
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
+const styles = {
+    h1: {font: "36px Segoe UI', Tahoma, Geneva, Verdana, sans-serif", fillStyle: "black",},
+    h2: {font: "18px Segoe UI', Tahoma, Geneva, Verdana, sans-serif", fillStyle: "black"},
+};
 // Functions are called when page opens to initially fill game contents
 fillLevel();
 fillChances();
 getGridLayout();
+resizeCanvas();
 drawHeadings();
+console.log(window.innerWidth);
+console.log(window.innerHeight);
+console.log(document.documentElement.clientWidth);
+console.log(document.documentElement.clientHeight);
 
+function resizeCanvas() {
+    if (document.documentElement.clientWidth < 775) {
+        canvas.width = document.documentElement.clientWidth * 0.98;
+    } else {
+        canvas.width = document.documentElement.clientWidth * 0.83;
+    }
+    //canvas.height = box_1.height;
+    console.log (canvas.width, canvas.height);
+}
 
 function drawHeadings() {
-ctx.font = '36px serif';
-ctx.fillText('How fast are your reflexes?', 2, 50);
-
+    if (document.documentElement.clientWidth < 775) {
+        ctx.font = 'bold 24px serif';
+        ctx.fillText('How fast are your reflexes?', 2, 50);
+        ctx.font = '16px serif';
+        ctx.fillText('Click the image that matches the description below', 2, 90);
+        ctx.fillText('as the stopclock records your response time!', 2, 110);
+    } else {
+        ctx.font = 'bold 36px serif';
+        ctx.fillText('How fast are your reflexes?', 2, 50);
+        ctx.font = '20px serif';
+        ctx.fillText('Click the image that matches the description below as the stopclock records your response time!', 2, 100);
+    }
 
 }
 
