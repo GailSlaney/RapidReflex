@@ -24,7 +24,7 @@ Users can compete by attempting to beat the game in the shortest time!
     - Level 1 displays 2 beginner images at a time.
     - Level 2 displays 4 beginner images at a time.
     - Level 3 displays 4 more complex images.
-    - Level 4 displays images that hopefully interest my Get Coding peeps! :-)
+    - Level 4 displays images that hopefully interest my Get Coding peeps! :-) 
 
 I have been thinking of other levels and skills that can be included in this game. Variations of the game can teach spelling and math skills.
 
