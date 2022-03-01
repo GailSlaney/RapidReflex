@@ -1,4 +1,4 @@
-Rapid Reflex
+# Rapid Reflex
 
 This game uses a stopclock to measure users' response time to select the correct image displayed on the screen.
 
