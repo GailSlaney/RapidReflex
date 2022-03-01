@@ -5,6 +5,7 @@ This game uses a stopclock to measure users' response time to select the correct
 Having young grandchildren motivated me to look for fun ways to teach them new skills. This game was initially designed to help them and others learn shapes and colors using a fun computer game. 
 
 How The Game Is Played
+
 ##When the user clicks the "Start Game" button:
     - The stopclock begins
     - Colored shape images are randomly selected from the array of images and displayed on the screen
