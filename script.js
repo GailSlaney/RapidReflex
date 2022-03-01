@@ -242,10 +242,21 @@ let randomInt,
 const sGrid = document.getElementById('imagesBox');
 const chanceText = document.getElementById('chances');
 
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
 // Functions are called when page opens to initially fill game contents
 fillLevel();
 fillChances();
 getGridLayout();
+drawHeadings();
+
+
+function drawHeadings() {
+ctx.font = '36px serif';
+ctx.fillText('How fast are your reflexes?', 2, 50);
+
+
+}
 
 // Let's Play button is clicked
 const startButton = document.getElementById('startButton');

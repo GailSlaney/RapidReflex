@@ -29,6 +29,13 @@ body    {
     text-align: justify;
 }
 
+#canvas {
+    position: relative;
+    min-width: 100;
+    min-height: 100;
+
+}
+
 .box_1 h1 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.1em;    
