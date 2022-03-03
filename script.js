@@ -254,10 +254,6 @@ fillChances();
 getGridLayout();
 resizeCanvas();
 drawHeadings();
-console.log(window.innerWidth);
-console.log(window.innerHeight);
-console.log(document.documentElement.clientWidth);
-console.log(document.documentElement.clientHeight);
 
 function resizeCanvas() {
     if (document.documentElement.clientWidth < 775) {
@@ -268,8 +264,9 @@ function resizeCanvas() {
     //canvas.height = box_1.height;
     console.log (canvas.width, canvas.height);
 }
-
+// Use canvas to draw headings above game
 function drawHeadings() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     if (document.documentElement.clientWidth < 775) {
         ctx.font = 'bold 24px serif';
         ctx.fillText('How fast are your reflexes?', 2, 50);
@@ -283,6 +280,15 @@ function drawHeadings() {
         ctx.fillText('Click the image that matches the description below as the stopclock records your response time!', 2, 100);
     }
 
+}
+
+// Use canvas to remove heading text and draw image above game
+function drawImage() {
+    let img = new Image();
+    img.addEventListener('load', function() {
+        ctx.drawImage()
+    }, false);
+    img.src="images/clappingHorse.gif";
 }
 
 // Let's Play button is clicked
@@ -383,17 +389,39 @@ function updateRound() {
             maxNumber = shapes.length;
             level = 1;
             break;
-        case 5: case 6: case 7: case 8:
+        case 5:
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
             numShapes = 4;
             maxNumber = shapes.length;
             level = 2;
             break; 
-        case 9: case 10: case 11:  case 12:
+        case 6: case 7: case 8:
+            numShapes = 4;
+            maxNumber = shapes.length;
+            level = 2;
+            break; 
+        case 9:
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
             numShapes = 4;
             maxNumber = shapes2.length;
             level = 3;
             break;
-        case 13: case 14: case 15:  case 16:
+        case 10: case 11:  case 12:
+            numShapes = 4;
+            maxNumber = shapes2.length;
+            level = 3;
+            break;
+        case 13:
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            numShapes = 4;
+            maxNumber = shapes3.length;
+            level = 4;
+            //make special case for get coding
+            break;
+        case 14: case 15:  case 16:
             numShapes = 4;
             maxNumber = shapes3.length;
             level = 4;
