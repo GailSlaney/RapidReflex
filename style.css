@@ -21,6 +21,7 @@ body    {
 }
 
 .box_1 {
+    display: flex;
     background-color: transparent;
     color: #333;
     border: none;
