@@ -248,7 +248,7 @@ const styles = {
     h1: {font: "36px Segoe UI', Tahoma, Geneva, Verdana, sans-serif", fillStyle: "black",},
     h2: {font: "18px Segoe UI', Tahoma, Geneva, Verdana, sans-serif", fillStyle: "black"},
 };
-const clappingHorse = document.getElementById('clapppingHorse');
+//const clappingHorse = document.getElementById('clapppingHorse');
 // Functions are called when page opens to initially fill game contents
 fillLevel();
 fillChances();
@@ -285,23 +285,26 @@ function drawHeadings() {
 
 // Use canvas to remove heading text and draw image above game
 function drawImage() {
-    
+   /* 
     animationTimer = setInterval(() => {
         clappingHorse.style.display = 'flex';
-    }, 10);
-   /* 
+    }, 10000);
+   */
+  const img = new Image();
+  img.src="images/clappingPony.gif";
    img.addEventListener('load', function() {
-        ctx.drawImage()
+        ctx.drawImage(img, 2, 2);
     }, false);
-    img.src="images/clappingHorse.gif";
-    */
+    
+    
 }
 
-function removeImage() {
+/*function removeImage() {
     removeAnimation = setInterval(() => {
         clappingHorse.style.display = 'none';
     }, 3000);
 }
+*/
 
 // Let's Play button is clicked
 const startButton = document.getElementById('startButton');
@@ -404,12 +407,13 @@ function updateRound() {
         case 5:
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             drawImage();
-            removeImage();
+            //removeImage();
             numShapes = 4;
             maxNumber = shapes.length;
             level = 2;
             break; 
         case 6: case 7: case 8:
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
             numShapes = 4;
             maxNumber = shapes.length;
             level = 2;
