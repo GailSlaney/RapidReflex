@@ -244,6 +244,7 @@ const chanceText = document.getElementById('chances');
 
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
+
 const styles = {
     h1: {font: "36px Segoe UI', Tahoma, Geneva, Verdana, sans-serif", fillStyle: "black",},
     h2: {font: "18px Segoe UI', Tahoma, Geneva, Verdana, sans-serif", fillStyle: "black"},
@@ -251,7 +252,8 @@ const styles = {
 let parallelogram2 = new Image(),
     parallelogram3 = new Image(),
     parallelogram4 = new Image(),
-    timer = 0;
+    timer = 0, 
+    requestId;
 parallelogram2.src = "images/parallelogram.png";
 parallelogram3.src = "images/parallelogram3.png";
 parallelogram4.src = "images/parallelogram4.png";
@@ -263,6 +265,7 @@ getGridLayout();
 resizeCanvas();
 drawHeadings();
 
+//Sets the canvas space size for headings/animation based on device size
 function resizeCanvas() {
     if (document.documentElement.clientWidth < 775) {
         canvas.width = document.documentElement.clientWidth * 0.98;
@@ -289,19 +292,51 @@ function drawHeadings() {
     }
 
 }
-
-function animate2() {
-    requestAnimationFrame(animate2);
-    ctx.drawImage(parallelogram2, 100, 0, 200, 150);
+let posX = canvas.width,
+    posY = 10
+    pixelsPerFrame = 5,
+    picWidth = parallelogram2.width,
+    picHeight = parallelogram2.height;
+function animate() {
+    requestId = requestAnimationFrame(animate);
+    if (posX > -picWidth) {
+        ctx.clearRect((posX - pixelsPerFrame), posY, picWidth, picHeight);
+        ctx.fillRect(posX, posY, picWidth, picHeight);
+        posX -= pixelsPerFrame;
+    } else {
+        cancelAnimationFrame(requestId);
+    }
 }
 
+/*
+let starttime;
+function animate2(timestamp, el, dist, duration) {
+    
+    let timeStamp = timestamp;
+    let runTime = timeStamp - starttime;
+    let progress =  runTime/duration;
+    progress = Math.min(progress, 1);
+    el.style.left = (dist * progress).toFixed(2) + 'px';
+    if (runTime < duration) {
+        requestAnimationFrame(function(timestamp) {
+            animate2(timestamp, canvas, 400, 2000);
+        }) 
+    }
+}
+
+requestAnimationFrame(function(timestamp) {
+    starttime = timestamp;
+    animate2(timestamp, canvas, 400, 2000);
+});
+ctx.drawImage(parallelogram2, 100, 0, 200, 150);
 // Use canvas to remove heading text and draw image above game
+
 function drawImage() {
    /* 
     animationTimer = setInterval(() => {
         clappingHorse.style.display = 'flex';
     }, 10000);
-   */
+   
   const img = new Image();
   img.src="images/clappingPony.gif";
    img.addEventListener('load', function() {
@@ -310,6 +345,7 @@ function drawImage() {
     
     
 }
+*/
 
 /*function removeImage() {
     removeAnimation = setInterval(() => {
@@ -417,13 +453,16 @@ function updateRound() {
             level = 1;
             break;
         case 5:
+            /*
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             drawImage();
             setInterval(function() {
                 timer +=1;
                 animate2();
             }, 1000);
+            */
             //removeImage();
+            requestAnimationFrame(animate);
             numShapes = 4;
             maxNumber = shapes.length;
             level = 2;
