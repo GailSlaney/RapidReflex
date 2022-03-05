@@ -248,7 +248,14 @@ const styles = {
     h1: {font: "36px Segoe UI', Tahoma, Geneva, Verdana, sans-serif", fillStyle: "black",},
     h2: {font: "18px Segoe UI', Tahoma, Geneva, Verdana, sans-serif", fillStyle: "black"},
 };
-//const clappingHorse = document.getElementById('clapppingHorse');
+let parallelogram2 = new Image(),
+    parallelogram3 = new Image(),
+    parallelogram4 = new Image(),
+    timer = 0;
+parallelogram2.src = "images/parallelogram.png";
+parallelogram3.src = "images/parallelogram3.png";
+parallelogram4.src = "images/parallelogram4.png";
+
 // Functions are called when page opens to initially fill game contents
 fillLevel();
 fillChances();
@@ -281,6 +288,11 @@ function drawHeadings() {
         ctx.fillText('Click the image that matches the description below as the stopclock records your response time!', 2, 100);
     }
 
+}
+
+function animate2() {
+    requestAnimationFrame(animate2);
+    ctx.drawImage(parallelogram2, 100, 0, 200, 150);
 }
 
 // Use canvas to remove heading text and draw image above game
@@ -407,6 +419,10 @@ function updateRound() {
         case 5:
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             drawImage();
+            setInterval(function() {
+                timer +=1;
+                animate2();
+            }, 1000);
             //removeImage();
             numShapes = 4;
             maxNumber = shapes.length;
