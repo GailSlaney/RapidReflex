@@ -249,15 +249,21 @@ const styles = {
     h1: {font: "36px Segoe UI', Tahoma, Geneva, Verdana, sans-serif", fillStyle: "black",},
     h2: {font: "18px Segoe UI', Tahoma, Geneva, Verdana, sans-serif", fillStyle: "black"},
 };
-let parallelogram2 = new Image(),
-    parallelogram3 = new Image(),
-    parallelogram4 = new Image(),
-    timer = 0, 
+let levelCel = {
+    parallelogram2: new Image(),
+    parallelogram3: new Image(),
+    parallelogram4: new Image(),
+    posX: canvas.width,
+    posY: 10
+};
+let timer = 0, 
     requestId;
-parallelogram2.src = "images/parallelogram.png";
-parallelogram3.src = "images/parallelogram3.png";
-parallelogram4.src = "images/parallelogram4.png";
-
+levelCel.parallelogram2.src = "images/parallelogram.png";
+levelCel.parallelogram3.src = "images/parallelogram3.png";
+levelCel.parallelogram4.src = "images/parallelogram4.png";
+console.log(levelCel.parallelogram2.width);
+console.log(levelCel.parallelogram2.height);
+console.log(levelCel);
 // Functions are called when page opens to initially fill game contents
 fillLevel();
 fillChances();
@@ -292,19 +298,22 @@ function drawHeadings() {
     }
 
 }
-let posX = canvas.width,
-    posY = 10
-    pixelsPerFrame = 5,
-    picWidth = parallelogram2.width,
-    picHeight = parallelogram2.height;
-function animate() {
-    requestId = requestAnimationFrame(animate);
-    if (posX > -picWidth) {
-        ctx.clearRect((posX - pixelsPerFrame), posY, picWidth, picHeight);
-        ctx.fillRect(posX, posY, picWidth, picHeight);
-        posX -= pixelsPerFrame;
+let pixelsPerFrame = 5,
+    //picWidth = levelCel.parallelogram2.width,
+    //picHeight = levelCel.parallelogram2.height,
+    x = levelCel.posX,
+    y = levelCel.posY;
+function animate2() {
+    requestId = requestAnimationFrame(animate2);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    //ctx.clearRect((x - picWidth), y, picWidth, picHeight);
+    ctx.drawImage(levelCel.parallelogram2,x,y);
+    if (x > -(canvas.width)) {
+        x -= pixelsPerFrame;
     } else {
         cancelAnimationFrame(requestId);
+        x = levelCel.posX;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
 }
 
@@ -367,6 +376,7 @@ startButton.addEventListener('click', (e) => {
     resetTimer();
     startTimer();
     newRound();
+    drawHeadings();
     displayedShapes.addEventListener('click', checkClick);
 })
 
@@ -453,16 +463,8 @@ function updateRound() {
             level = 1;
             break;
         case 5:
-            /*
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            drawImage();
-            setInterval(function() {
-                timer +=1;
-                animate2();
-            }, 1000);
-            */
-            //removeImage();
-            requestAnimationFrame(animate);
+            animate2();
             numShapes = 4;
             maxNumber = shapes.length;
             level = 2;
