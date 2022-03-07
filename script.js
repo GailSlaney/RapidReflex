@@ -223,7 +223,7 @@ const shapes3 = [
     }
 ];
 
-//Page initially opens
+// Page initially opens
 let randomInt,
     shapeArray = new Array(0),
     shapesArray = new Array(0),
@@ -245,11 +245,13 @@ const chanceText = document.getElementById('chances');
 
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
-
+/*
 const styles = {
     h1: {font: "36px Segoe UI', Tahoma, Geneva, Verdana, sans-serif", fillStyle: "black",},
     h2: {font: "18px Segoe UI', Tahoma, Geneva, Verdana, sans-serif", fillStyle: "black"},
 };
+*/
+// Object to hold animation images and x, y positions
 let levelCel = {
     anim2: new Image(),
     anim3: new Image(),
@@ -257,30 +259,29 @@ let levelCel = {
     posX: canvas.width,
     posY: 10
 };
-let timer = 0, 
-    requestId;
+let requestId = 0;
+// Assign source for animation images
 levelCel.anim2.src = "images/anim2.png";
 levelCel.anim3.src = "images/anim3.png";
 levelCel.anim4.src = "images/anim4.png";
 console.log(levelCel.anim2.width);
 console.log(levelCel.anim2.height);
 console.log(levelCel);
-// Functions are called when page opens to initially fill game contents
+
+// Functions called when page opens to initially fill game contents
 fillLevel();
 fillChances();
 getGridLayout();
 resizeCanvas();
 drawHeadings();
 
-//Sets the canvas space size for headings/animation based on device size
+// Sets canvas space size for headings/animation based on device size
 function resizeCanvas() {
     if (document.documentElement.clientWidth < 775) {
         canvas.width = document.documentElement.clientWidth * 0.98;
     } else {
         canvas.width = document.documentElement.clientWidth * 0.83;
     }
-    //canvas.height = box_1.height;
-    console.log (canvas.width, canvas.height);
 }
 // Use canvas to draw headings above game
 function drawHeadings() {
@@ -299,15 +300,14 @@ function drawHeadings() {
     }
 
 }
+
+// Animates images at beginning of each level
 let pixelsPerFrame = 5,
-    //picWidth = levelCel.parallelogram2.width,
-    //picHeight = levelCel.parallelogram2.height,
     x = levelCel.posX,
     y = levelCel.posY;
 function animate() {
     requestId = requestAnimationFrame(animate);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    //ctx.clearRect((x - picWidth), y, picWidth, picHeight);
     ctx.drawImage(anImage, x, y);
     if (x > -(canvas.width)) {
         x -= pixelsPerFrame;
@@ -317,52 +317,6 @@ function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
 }
-
-/*
-let starttime;
-function animate2(timestamp, el, dist, duration) {
-    
-    let timeStamp = timestamp;
-    let runTime = timeStamp - starttime;
-    let progress =  runTime/duration;
-    progress = Math.min(progress, 1);
-    el.style.left = (dist * progress).toFixed(2) + 'px';
-    if (runTime < duration) {
-        requestAnimationFrame(function(timestamp) {
-            animate2(timestamp, canvas, 400, 2000);
-        }) 
-    }
-}
-
-requestAnimationFrame(function(timestamp) {
-    starttime = timestamp;
-    animate2(timestamp, canvas, 400, 2000);
-});
-ctx.drawImage(parallelogram2, 100, 0, 200, 150);
-// Use canvas to remove heading text and draw image above game
-
-function drawImage() {
-   /* 
-    animationTimer = setInterval(() => {
-        clappingHorse.style.display = 'flex';
-    }, 10000);
-   
-  const img = new Image();
-  img.src="images/clappingPony.gif";
-   img.addEventListener('load', function() {
-        ctx.drawImage(img, 2, 2);
-    }, false);
-    
-    
-}
-*/
-
-/*function removeImage() {
-    removeAnimation = setInterval(() => {
-        clappingHorse.style.display = 'none';
-    }, 3000);
-}
-*/
 
 // Let's Play button is clicked
 const startButton = document.getElementById('startButton');
@@ -399,13 +353,13 @@ function checkClick(e) {
     }
 }
 
-//Populates Level # textbox
+// Populates Level # textbox
 function fillLevel(){
     const levelText = document.getElementById('level');
     levelText.textContent = `Level ${level}`;
 }
 
-//Populates # Chances Left textbox
+// Populates # Chances Left textbox
 function fillChances(){
     chanceText.textContent = `${chances} Chances`;
     chanceText.style.backgroundColor = bgdColor;
@@ -428,7 +382,7 @@ function getGridLayout() {
     }
 }
 
-//update #Chances
+// Updates #Chances
 function updateChances() {
     if (chances > 0) {
         chances --;
@@ -453,7 +407,7 @@ function updateChances() {
             fillChances();
 }
 
-//update round#
+// Updates round#
 function updateRound() {
     round ++;
     switch (round) 
@@ -497,13 +451,12 @@ function updateRound() {
             numShapes = 4;
             maxNumber = shapes3.length;
             level = 4;
-            //make special case for get coding
+            // Make special case for get coding
             break;
         case 14: case 15:  case 16:
             numShapes = 4;
             maxNumber = shapes3.length;
             level = 4;
-            //make special case for get coding
             break;
         default:
             winner();
