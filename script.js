@@ -237,7 +237,8 @@ let randomInt,
     maxNumber = shapes.length,
     bgdColor = 'ivory',
     numShapes = 2,
-    timeMessage;
+    timeMessage,
+    animImage;
 
 const sGrid = document.getElementById('imagesBox');
 const chanceText = document.getElementById('chances');
@@ -250,19 +251,19 @@ const styles = {
     h2: {font: "18px Segoe UI', Tahoma, Geneva, Verdana, sans-serif", fillStyle: "black"},
 };
 let levelCel = {
-    parallelogram2: new Image(),
-    parallelogram3: new Image(),
-    parallelogram4: new Image(),
+    anim2: new Image(),
+    anim3: new Image(),
+    anim4: new Image(),
     posX: canvas.width,
     posY: 10
 };
 let timer = 0, 
     requestId;
-levelCel.parallelogram2.src = "images/parallelogram.png";
-levelCel.parallelogram3.src = "images/parallelogram3.png";
-levelCel.parallelogram4.src = "images/parallelogram4.png";
-console.log(levelCel.parallelogram2.width);
-console.log(levelCel.parallelogram2.height);
+levelCel.anim2.src = "images/anim2.png";
+levelCel.anim3.src = "images/anim3.png";
+levelCel.anim4.src = "images/anim4.png";
+console.log(levelCel.anim2.width);
+console.log(levelCel.anim2.height);
 console.log(levelCel);
 // Functions are called when page opens to initially fill game contents
 fillLevel();
@@ -303,11 +304,11 @@ let pixelsPerFrame = 5,
     //picHeight = levelCel.parallelogram2.height,
     x = levelCel.posX,
     y = levelCel.posY;
-function animate2() {
-    requestId = requestAnimationFrame(animate2);
+function animate() {
+    requestId = requestAnimationFrame(animate);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     //ctx.clearRect((x - picWidth), y, picWidth, picHeight);
-    ctx.drawImage(levelCel.parallelogram2,x,y);
+    ctx.drawImage(anImage, x, y);
     if (x > -(canvas.width)) {
         x -= pixelsPerFrame;
     } else {
@@ -464,7 +465,8 @@ function updateRound() {
             break;
         case 5:
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            animate2();
+            anImage = levelCel.anim2;
+            animate();
             numShapes = 4;
             maxNumber = shapes.length;
             level = 2;
@@ -477,7 +479,8 @@ function updateRound() {
             break; 
         case 9:
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
+            anImage = levelCel.anim3;
+            animate();            
             numShapes = 4;
             maxNumber = shapes2.length;
             level = 3;
@@ -489,7 +492,8 @@ function updateRound() {
             break;
         case 13:
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
+            anImage = levelCel.anim4;
+            animate();            
             numShapes = 4;
             maxNumber = shapes3.length;
             level = 4;
