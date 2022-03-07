@@ -37,16 +37,6 @@ body    {
 
 }
 
-.box_1 h1 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.1em;    
-}
-
-.box_1 h2 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 0.9em;
-}
-
 .shapes_timer {
     display: grid;
     grid-auto-flow: column;
