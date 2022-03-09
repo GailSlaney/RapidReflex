@@ -245,6 +245,9 @@ const chanceText = document.getElementById('chances');
 
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
+
+const canvas2 = document.getElementById('canvas2');
+const ctx2 = canvas2.getContext('2d');
 /*
 const styles = {
     h1: {font: "36px Segoe UI', Tahoma, Geneva, Verdana, sans-serif", fillStyle: "black",},
@@ -279,8 +282,10 @@ drawHeadings();
 function resizeCanvas() {
     if (document.documentElement.clientWidth < 775) {
         canvas.width = document.documentElement.clientWidth * 0.98;
+        canvas2.width = document.documentElement.clientWidth * 0.98;
     } else {
         canvas.width = document.documentElement.clientWidth * 0.83;
+        canvas2.width = document.documentElement.clientWidth * 0.83;
     }
 }
 // Use canvas to draw headings above game

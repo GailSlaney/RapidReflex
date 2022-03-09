@@ -109,7 +109,7 @@ body    {
     object-fit: contain;
     object-position: 50% 50%;
     cursor: pointer;
-   width: 3.8em;
+    width: 3.8em;
 }
 
 #timer {
@@ -171,6 +171,22 @@ body    {
     border-radius: 10% / 50%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 0.8em;
+
+}
+.box_2 {
+    display: flex;
+    background-color: transparent;
+    color: #333;
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+    text-align: justify;
+}
+
+#canvas2 {
+    position: relative;
+    min-width: 100;
+    min-height: 100;
 
 }
 
