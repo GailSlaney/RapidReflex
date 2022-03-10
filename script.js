@@ -460,17 +460,13 @@ function updateRound() {
             anImage = levelCel.anim4;
             animate();            
             numShapes = 4;
-            maxNumber = shapes2.length;
-            // Revert back to shapes3
-            //maxNumber = shapes3.length;
+            maxNumber = shapes3.length;
             level = 4;
             // Special case for get coding
             break;
         case 14: case 15:  case 16:
             numShapes = 4;
-            maxNumber = shapes2.length;
-            // Revert back to shapes3
-            //maxNumber = shapes3.length;
+            maxNumber = shapes3.length;
             level = 4;
             break;
         default:
@@ -552,9 +548,7 @@ function getImage() {
             shapeArray = shapes2[randomInt];
             break;
         case 4:
-            // Revert back to shapes3
-            shapeArray = shapes2[randomInt];
-            //shapeArray = shapes3[randomInt];
+            shapeArray = shapes3[randomInt];
             break;
     }
     arrayLength = shapesArray.push(shapeArray);
