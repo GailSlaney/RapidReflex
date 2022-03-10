@@ -246,14 +246,14 @@ const chanceText = document.getElementById('chances');
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
+const welcome = document.getElementById('welcome');
+const pony = document.getElementById('pony');
+
+/*
 const canvas2 = document.getElementById('canvas2');
 const ctx2 = canvas2.getContext('2d');
-/*
-const styles = {
-    h1: {font: "36px Segoe UI', Tahoma, Geneva, Verdana, sans-serif", fillStyle: "black",},
-    h2: {font: "18px Segoe UI', Tahoma, Geneva, Verdana, sans-serif", fillStyle: "black"},
-};
 */
+
 // Object to hold animation images and x, y positions
 let levelCel = {
     anim2: new Image(),
@@ -267,9 +267,29 @@ let requestId = 0;
 levelCel.anim2.src = "images/anim2.png";
 levelCel.anim3.src = "images/anim3.png";
 levelCel.anim4.src = "images/anim4.png";
-console.log(levelCel.anim2.width);
-console.log(levelCel.anim2.height);
-console.log(levelCel);
+
+/*
+let ponyAnim = {
+    welcome: new Image(),
+    pony: new Image(),
+    welcomeX: canvas2.width * 0.6,
+    welcomeY: 0,
+    ponyX: canvas2.width * 0.7,
+    ponyY: 0
+};
+
+
+// Assign source for animation images
+ponyAnim.welcome.src = "images/welcome.png";
+ponyAnim.pony.src = "images/clappPonySmall.png";
+
+let ponyImage = ponyAnim.pony,
+    welcomeImage = ponyAnim.welcome,
+    xa = ponyAnim.welcomeX,
+    ya = ponyAnim.welcomeY,
+    xb = ponyAnim.ponyX,
+    yb = ponyAnim.ponyY;
+*/
 
 // Functions called when page opens to initially fill game contents
 fillLevel();
@@ -277,15 +297,17 @@ fillChances();
 getGridLayout();
 resizeCanvas();
 drawHeadings();
+drawPony();
+//setTimeout(removeWelcome,10000);
 
 // Sets canvas space size for headings/animation based on device size
 function resizeCanvas() {
     if (document.documentElement.clientWidth < 775) {
         canvas.width = document.documentElement.clientWidth * 0.98;
-        canvas2.width = document.documentElement.clientWidth * 0.98;
+        //canvas2.width = document.documentElement.clientWidth * 0.98;
     } else {
         canvas.width = document.documentElement.clientWidth * 0.83;
-        canvas2.width = document.documentElement.clientWidth * 0.83;
+        //canvas2.width = document.documentElement.clientWidth * 0.83;
     }
 }
 // Use canvas to draw headings above game
@@ -321,6 +343,21 @@ function animate() {
         x = levelCel.posX;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
+}
+
+
+    console.log(ponyImage.style.display);
+// Use canvas2 to draw Pony animation below game
+function drawPony() {
+pony.style.display = 'flex';
+welcome.style.display = 'flex';
+    //ctx2.drawImage(welcomeImage, xa, ya);
+    //ctx2.drawImage(ponyImage, xb, yb);
+}
+
+//Remove welcome image from screen
+function removeWelcome() {
+    welcomeImage.style.display = 'none';
 }
 
 // Let's Play button is clicked
@@ -425,6 +462,7 @@ function updateRound() {
         case 5:
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             anImage = levelCel.anim2;
+            //drawPony();
             animate();
             numShapes = 4;
             maxNumber = shapes.length;
