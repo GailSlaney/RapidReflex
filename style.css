@@ -183,7 +183,7 @@ body    {
     border: none;
     padding: 5px;
     margin-top: 5px;
-    size: 20%;
+    /*size: 20%;*/
 }
 #welcome {
     z-index: 1;
@@ -195,21 +195,25 @@ body    {
 }
 
 #pony {
-    /*z-index: 1;*/
-    display: none;
-    height: 8vh;
-    position: absolute;
+    z-index: 1;
+    display: block;
+    visibility: visible;
+    /*height: 8vh;*/
+    position: relative;
     bottom: 20%;
     right: 30%;
 }
-
+/*
 #canvas2 {
+    z-index: 1;
+    display: block;
+    visibility: visible;
     position: relative;
-    /*z-index: 2;*/
+    /*z-index: 2;
     min-width: 100;
     min-height: 50;
 }
-
+*/
 @media screen and (min-width: 775px) {  /*600px*/
    body {
        font-size: 2em;

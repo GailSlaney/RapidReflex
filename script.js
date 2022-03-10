@@ -349,8 +349,8 @@ function animate() {
     console.log(ponyImage.style.display);
 // Use canvas2 to draw Pony animation below game
 function drawPony() {
-pony.style.display = 'flex';
-welcome.style.display = 'flex';
+pony.style.display = 'block';
+welcome.style.display = 'block';
     //ctx2.drawImage(welcomeImage, xa, ya);
     //ctx2.drawImage(ponyImage, xb, yb);
 }
