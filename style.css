@@ -12,6 +12,8 @@ body    {
     background-image : url(images/background6.png);
     background-size:cover;
     background-repeat: no-repeat;
+    background-position: center;
+    margin: 5%;
 }
 
 .container  {
