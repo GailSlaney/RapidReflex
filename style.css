@@ -33,7 +33,6 @@ body    {
 }
 
 #canvas {
-    /*z-index: -1;*/
     position: relative;
     min-width: 100;
     min-height: 100;
@@ -183,38 +182,29 @@ body    {
     border: none;
     padding: 5px;
     margin-top: 5px;
-    /*size: 20%;*/
+
+    flex-wrap:nowrap;   
+    justify-content:flex-end;
+    width: auto;
+    height: auto;
 }
 #welcome {
-    z-index: 1;
-    display: none;
-    height: 6vh;
-    position: absolute;
-    bottom: 20%;
-    right: 50%;
+    position: relative;
+    bottom: 50%;
+    right: 10%;
+    align-self:flex-start;
+    width: 4em;
 }
 
 #pony {
-    z-index: 1;
-    display: block;
-    visibility: visible;
-    /*height: 8vh;*/
-    position: relative;
-    bottom: 20%;
-    right: 30%;
-}
-/*
-#canvas2 {
-    z-index: 1;
-    display: block;
     visibility: visible;
     position: relative;
-    /*z-index: 2;
-    min-width: 100;
-    min-height: 50;
+    bottom: 5%;
+    right: 5%;
+    width: 5em;
 }
-*/
-@media screen and (min-width: 775px) {  /*600px*/
+
+@media screen and (min-width: 775px) { 
    body {
        font-size: 2em;
    }

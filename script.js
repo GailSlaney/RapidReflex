@@ -249,11 +249,6 @@ const ctx = canvas.getContext('2d');
 const welcome = document.getElementById('welcome');
 const pony = document.getElementById('pony');
 
-/*
-const canvas2 = document.getElementById('canvas2');
-const ctx2 = canvas2.getContext('2d');
-*/
-
 // Object to hold animation images and x, y positions
 let levelCel = {
     anim2: new Image(),
@@ -262,34 +257,13 @@ let levelCel = {
     posX: canvas.width,
     posY: 10
 };
+
 let requestId = 0;
+
 // Assign source for animation images
 levelCel.anim2.src = "images/anim2.png";
 levelCel.anim3.src = "images/anim3.png";
 levelCel.anim4.src = "images/anim4.png";
-
-/*
-let ponyAnim = {
-    welcome: new Image(),
-    pony: new Image(),
-    welcomeX: canvas2.width * 0.6,
-    welcomeY: 0,
-    ponyX: canvas2.width * 0.7,
-    ponyY: 0
-};
-
-
-// Assign source for animation images
-ponyAnim.welcome.src = "images/welcome.png";
-ponyAnim.pony.src = "images/clappPonySmall.png";
-
-let ponyImage = ponyAnim.pony,
-    welcomeImage = ponyAnim.welcome,
-    xa = ponyAnim.welcomeX,
-    ya = ponyAnim.welcomeY,
-    xb = ponyAnim.ponyX,
-    yb = ponyAnim.ponyY;
-*/
 
 // Functions called when page opens to initially fill game contents
 fillLevel();
@@ -298,16 +272,14 @@ getGridLayout();
 resizeCanvas();
 drawHeadings();
 drawPony();
-//setTimeout(removeWelcome,10000);
+setTimeout(removeWelcome,5000);
 
 // Sets canvas space size for headings/animation based on device size
 function resizeCanvas() {
     if (document.documentElement.clientWidth < 775) {
         canvas.width = document.documentElement.clientWidth * 0.98;
-        //canvas2.width = document.documentElement.clientWidth * 0.98;
     } else {
         canvas.width = document.documentElement.clientWidth * 0.83;
-        //canvas2.width = document.documentElement.clientWidth * 0.83;
     }
 }
 // Use canvas to draw headings above game
@@ -345,19 +317,16 @@ function animate() {
     }
 }
 
-
-    console.log(ponyImage.style.display);
-// Use canvas2 to draw Pony animation below game
+    console.log(pony.style.display);
+// Draw Pony animation below game
 function drawPony() {
 pony.style.display = 'block';
 welcome.style.display = 'block';
-    //ctx2.drawImage(welcomeImage, xa, ya);
-    //ctx2.drawImage(ponyImage, xb, yb);
 }
 
-//Remove welcome image from screen
+// Remove welcome image from screen
 function removeWelcome() {
-    welcomeImage.style.display = 'none';
+    welcome.style.display = 'none';
 }
 
 // Let's Play button is clicked
@@ -462,7 +431,6 @@ function updateRound() {
         case 5:
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             anImage = levelCel.anim2;
-            //drawPony();
             animate();
             numShapes = 4;
             maxNumber = shapes.length;
@@ -494,7 +462,7 @@ function updateRound() {
             numShapes = 4;
             maxNumber = shapes3.length;
             level = 4;
-            // Make special case for get coding
+            // Special case for get coding
             break;
         case 14: case 15:  case 16:
             numShapes = 4;
