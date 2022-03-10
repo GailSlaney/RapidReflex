@@ -183,6 +183,7 @@ body    {
     border: none;
     padding: 5px;
     margin-top: 5px;
+    size: 20%;
 }
 #welcome {
     z-index: 1;
@@ -198,7 +199,7 @@ body    {
     display: none;
     height: 8vh;
     position: absolute;
-    bottom: 10%;
+    bottom: 20%;
     right: 30%;
 }
 
