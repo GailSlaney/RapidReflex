@@ -3,6 +3,7 @@
 This game uses a stopclock to measure users' response time to select the correct image displayed on the screen.
 
 Having young grandchildren motivated me to look for fun ways to teach them new skills. This game was initially designed to help them and others learn shapes and colors using a fun computer game.
+---
 
 ### How The Game Is Played
 When the user clicks the "Start Game" button:
@@ -11,6 +12,7 @@ When the user clicks the "Start Game" button:
 -  A textbox displays words describing one of the two images.
 -  The user needs to click the image that matches the description. (The description is also randomly selected from the images displayed on the screen).
 -  As soon as the user clicks the image, new images are randomly selected and a new description is displayed.
+-  ***
 
 The game continues until the user:
   -  Loses by clicking the wrong image 3 times
