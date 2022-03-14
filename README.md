@@ -7,7 +7,7 @@ Having young grandchildren motivated me to look for fun ways to teach them new s
 
 ***
 ### How The Game Is Played
----
+--
 When the user clicks the "Start Game" button:
 -  The stopclock begins.
 -  Colored shape images are randomly selected from the array of images and displayed on the screen.
