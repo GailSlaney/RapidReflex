@@ -783,12 +783,15 @@ function getImage() {
     {
         case 1: case 2:
             shapeArray = shapes[randomInt];
+            console.log(randomInt);
             break;
         case 3:
             shapeArray = shapes2[randomInt];
+            console.log(randomInt);
             break;
         case 4:
             shapeArray = shapes3[randomInt];
+            console.log(randomInt);
             break;
     }
     arrayLength = shapesArray.push(shapeArray);
