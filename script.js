@@ -295,6 +295,48 @@ const shapes2 = [
         image: 'images/blueHeptagon.png',
         name: 'Heptagon',
         color: 'Blue'
+    },
+    {
+        id: 28,
+        image: 'images/blueTrapezoid.png',
+        name: 'Trapezoid',
+        color: 'Blue'
+    },
+    {
+        id: 29,
+        image: 'images/greenTrapezoid.png',
+        name: 'Trapezoid',
+        color: 'Green'
+    },
+    {
+        id: 30,
+        image: 'images/orangeTrapezoid.png',
+        name: 'Trapezoid',
+        color: 'Orange'
+    },
+    {
+        id: 31,
+        image: 'images/redTrapezoid.png',
+        name: 'Trapezoid',
+        color: 'Red'
+    },
+    {
+        id: 32,
+        image: 'images/yellowTrapezoid.png',
+        name: 'Trapezoid',
+        color: 'Yellow'
+    },
+    {
+        id: 33,
+        image: 'images/blackTrapezoid.png',
+        name: 'Trapezoid',
+        color: 'Black'
+    },
+    {
+        id: 34,
+        image: 'images/pinkTrapezoid.png',
+        name: 'Trapezoid',
+        color: 'Pink'
     }
 ];
 
@@ -418,48 +460,6 @@ const shapes3 = [
         image: 'images/blackDecagon.png',
         name: 'Decagon',
         color: 'Black'
-    },
-    {
-        id: 20,
-        image: 'images/blueTrapezoid.png',
-        name: 'Trapezoid',
-        color: 'Blue'
-    },
-    {
-        id: 21,
-        image: 'images/greenTrapezoid.png',
-        name: 'Trapezoid',
-        color: 'Green'
-    },
-    {
-        id: 22,
-        image: 'images/orangeTrapezoid.png',
-        name: 'Trapezoid',
-        color: 'Orange'
-    },
-    {
-        id: 23,
-        image: 'images/redTrapezoid.png',
-        name: 'Trapezoid',
-        color: 'Red'
-    },
-    {
-        id: 24,
-        image: 'images/yellowTrapezoid.png',
-        name: 'Trapezoid',
-        color: 'Yellow'
-    },
-    {
-        id: 25,
-        image: 'images/blackTrapezoid.png',
-        name: 'Trapezoid',
-        color: 'Black'
-    },
-    {
-        id: 26,
-        image: 'images/pinkTrapezoid.png',
-        name: 'Trapezoid',
-        color: 'Pink'
     }
 ];
 
