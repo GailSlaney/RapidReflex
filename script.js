@@ -373,7 +373,7 @@ const shapes3 = [
     },
     {
         id: 5,
-        image: 'images/jsComment.png',
+        image: 'images/javascriptComment.png',
         name: 'Comment',
         color: 'javascript'
     },
