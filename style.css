@@ -237,4 +237,7 @@ body    {
     #startButton {
         font-size: 1.0em;
     }
+    #imagesBox {
+        flex-direction: row;
+    }
 }
