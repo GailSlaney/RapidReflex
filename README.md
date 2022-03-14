@@ -38,3 +38,6 @@ I have been thinking of other levels and skills that can be included in this gam
 The project uses javascript, css, and html. 
 
 I have added some animation in the background when the player moves up each level.
+
+Link to Play the Game: https://gailslaney.github.io/RapidReflex/
+
