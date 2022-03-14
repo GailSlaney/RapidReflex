@@ -37,4 +37,4 @@ I have been thinking of other levels and skills that can be included in this gam
 ***
 The project uses javascript, css, and html. 
 
-I am currently adding some animation in the background when the player moves up a level, or finishes the game.
+I have added some animation in the background when the player moves up each level.
