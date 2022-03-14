@@ -337,6 +337,42 @@ const shapes2 = [
         image: 'images/pinkTrapezoid.png',
         name: 'Trapezoid',
         color: 'Pink'
+    },
+    {
+        id: 35,
+        image: 'images/greenNonagon.png',
+        name: 'Nonagon',
+        color: 'Green'
+    },
+    {
+        id: 36,
+        image: 'images/orangeNonagon.png',
+        name: 'Nonagon',
+        color: 'Orange'
+    },
+    {
+        id: 37,
+        image: 'images/yellowNonagon.png',
+        name: 'Nonagon',
+        color: 'Yellow'
+    },
+    {
+        id: 38,
+        image: 'images/greenDecagon.png',
+        name: 'Decagon',
+        color: 'Green'
+    },
+    {
+        id: 39,
+        image: 'images/orangeDecagon.png',
+        name: 'Decagon',
+        color: 'Orange'
+    },
+    {
+        id: 40,
+        image: 'images/yellowDecagon.png',
+        name: 'Decagon',
+        color: 'Yellow'
     }
 ];
 
@@ -403,60 +439,24 @@ const shapes3 = [
     },
     {
         id: 10,
-        image: 'images/greenNonagon.png',
-        name: 'Nonagon',
-        color: 'Green'
-    },
-    {
-        id: 11,
-        image: 'images/orangeNonagon.png',
-        name: 'Nonagon',
-        color: 'Orange'
-    },
-    {
-        id: 12,
-        image: 'images/yellowNonagon.png',
-        name: 'Nonagon',
-        color: 'Yellow'
-    },
-    {
-        id: 13,
         image: 'images/pinkDecagon.png',
         name: 'Decagon',
         color: 'Pink'
     },
     {
-        id: 14,
+        id: 11,
         image: 'images/redDecagon.png',
         name: 'Decagon',
         color: 'Red'
     },
     {
-        id: 15,
+        id: 12,
         image: 'images/blueDecagon.png',
         name: 'Decagon',
         color: 'Blue'
     },
     {
-        id: 16,
-        image: 'images/greenDecagon.png',
-        name: 'Decagon',
-        color: 'Green'
-    },
-    {
-        id: 17,
-        image: 'images/orangeDecagon.png',
-        name: 'Decagon',
-        color: 'Orange'
-    },
-    {
-        id: 18,
-        image: 'images/yellowDecagon.png',
-        name: 'Decagon',
-        color: 'Yellow'
-    },
-    {
-        id: 19,
+        id: 13,
         image: 'images/blackDecagon.png',
         name: 'Decagon',
         color: 'Black'
