@@ -557,7 +557,6 @@ function animate() {
     }
 }
 
-    console.log(pony.style.display);
 // Draw Pony animation below game
 function drawPony() {
 pony.style.display = 'block';
@@ -575,6 +574,7 @@ startButton.addEventListener('click', (e) => {
     e.preventDefault();    
     // Game begins with 2 images displayed
     numShapes = 2;
+    maxNumber = shapes.length;
     level = 1;
     chances = 3;
     round = 1;
@@ -783,15 +783,12 @@ function getImage() {
     {
         case 1: case 2:
             shapeArray = shapes[randomInt];
-            console.log(randomInt);
             break;
         case 3:
             shapeArray = shapes2[randomInt];
-            console.log(randomInt);
             break;
         case 4:
             shapeArray = shapes3[randomInt];
-            console.log(randomInt);
             break;
     }
     arrayLength = shapesArray.push(shapeArray);
