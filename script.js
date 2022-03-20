@@ -633,7 +633,7 @@ function getGridLayout() {
     }
 }
 
-// Updates #Chances
+// Updates # Chances
 function updateChances() {
     if (chances > 0) {
         chances --;
@@ -658,7 +658,7 @@ function updateChances() {
             fillChances();
 }
 
-// Updates round#
+// Updates round #
 function updateRound() {
     round ++;
     switch (round) 
@@ -803,7 +803,6 @@ function getImage() {
 
 // Remove images from box
 function clearImages() {
-    //let sImgA = document.getElementsByClassName("sImgA");
     let imagesBox = document.getElementById("imagesBox");
     let sButton = document.querySelector("button");
     let childElementCount = imagesBox.childElementCount;
