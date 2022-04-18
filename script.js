@@ -65,8 +65,8 @@ function drawHeadings() {
         ctx.font = 'bold 24px serif';
         ctx.fillText('How fast are your reflexes?', 2, 50);
         ctx.font = '16px serif';
-        ctx.fillText('Click the image that matches the description below', 2, 90);
-        ctx.fillText('as the stopclock records your response time!', 2, 110);
+        ctx.fillText('Click the image that matches the description ', 2, 90);
+        ctx.fillText('as the stop-clock records your response time!', 2, 110);
     } else {
         ctx.font = 'bold 36px serif';
         ctx.fillText('How fast are your reflexes?', 2, 50);
